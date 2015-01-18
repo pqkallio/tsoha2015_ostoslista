@@ -1,10 +1,10 @@
-# Tietokantasovelluksen esittelysivu
+# Ostoslistasovellus
 
 Yleisiä linkkejä:
 
-* [Linkki sovellukseeni](https://www.cs.helsinki.fi)
-* [Linkki dokumentaatiooni](https://www.github.com)
+* [Linkki sovellukseen](http://pqkallio.users.cs.helsinki.fi/tsoha2015/)
+* [Linkki dokumentaatioon](https://github.com/pqkallio/tsoha2015_ostoslista/blob/master/doc/dokumentaatio.pdf)
 
 ## Työn aihe
 
-Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkittenry.github.io/suunnittelu_ja_tyoymparisto/aiheet/Pokemon-kanta.html) 
+Ostoslistasovellus mahdollistaa ostoslistojen tekemisen sekä listojen jakamisen useiden eri käyttäjien kesken. Tarkoitus on luoda sovellus, joka mahdollistaa ostosten nopean lisäämisen, useamman samanaikaisen listan käytön ja helpon navigoinnin niiden välillä. Listoja voi myös järjestää eri tavoin, esim. aakkos- tai osastojärjestykseen. 
