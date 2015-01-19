@@ -1,0 +1,42 @@
+{% extends "suunnitelmat/list_navi.html" %}
+
+{% block list %}
+<table class="table table-responsive table-striped table-hover">
+    <div>Kauppa: <button class="btn btn-default">Ikea, Vantaa</button></div>
+    <thead>
+        <tr>
+            <th>Tuote</th>
+            <th>Määrä</th>
+            <th>Osasto</th>
+            <th><button class="btn btn-success">Jaa</button></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Kaapisto</td>
+            <td>1 kpl</td>
+            <td></td>
+            <td><input class='checkbox checkbox-inline' type="checkbox"></td>
+        </tr>
+        <tr>
+            <td>Parisänky</td>
+            <td>1 kpl</td>
+            <td></td>
+            <td><input class='checkbox checkbox-inline' type="checkbox"></td>
+        </tr>
+        <tr>
+            <td>Ruma matto</td>
+            <td>3 kpl</td>
+            <td></td>
+            <td><input class='checkbox checkbox-inline' type="checkbox"></td>
+        </tr>
+        <tr>
+            <td>Paristo AAA</td>
+            <td>8 pkt</td>
+            <td></td>
+            <td><input class='checkbox checkbox-inline' type="checkbox" checked></td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}
