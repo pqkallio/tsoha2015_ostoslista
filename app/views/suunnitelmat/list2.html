@@ -1,40 +1,64 @@
 {% extends "suunnitelmat/list_navi.html" %}
 
 {% block list %}
-<table class="table table-responsive table-striped table-hover">
-    <div>Kauppa: <button class="btn btn-default">Ikea, Vantaa</button></div>
+<div id="list_header" style="display:block;clear:both;">
+    <div id="shared_with" style="display:inline-block;float:left;">Jaettu käyttäjän <strong>merkkari88</strong> kanssa</div>
+    <div id="shared_with" style="display:inline-block;float:right;"><button class="btn btn-primary">Jaa lista!</button></div>
+</div>
+<div id="listan_kauppa" style="display:block;clear:both;">Kauppa: <label class="label label-primary">Ikea, Vantaa</label></div>
+<table class="table table-responsive table-striped table-hover" style="width:100%">
     <thead>
         <tr>
             <th>Tuote</th>
-            <th>Määrä</th>
+            <th colspan="2">Määrä</th>
             <th>Osasto</th>
-            <th><button class="btn btn-success">Jaa</button></th>
+            <th><button class="btn btn-danger">Poista lista</button></th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>Kaapisto</td>
-            <td>1 kpl</td>
+            <td colspan="2">1 kpl</td>
             <td></td>
             <td><input class='checkbox checkbox-inline' type="checkbox"></td>
         </tr>
         <tr>
             <td>Parisänky</td>
-            <td>1 kpl</td>
+            <td colspan="2">1 kpl</td>
             <td></td>
             <td><input class='checkbox checkbox-inline' type="checkbox"></td>
         </tr>
         <tr>
             <td>Ruma matto</td>
-            <td>3 kpl</td>
+            <td colspan="2">3 kpl</td>
             <td></td>
             <td><input class='checkbox checkbox-inline' type="checkbox"></td>
         </tr>
         <tr>
             <td>Paristo AAA</td>
-            <td>8 pkt</td>
+            <td colspan="2">8 pkt</td>
             <td></td>
             <td><input class='checkbox checkbox-inline' type="checkbox" checked></td>
+        </tr>
+        <tr>
+            <form id="add_purchase" class="form-inline">
+                <td style="width: 20%"><input type="text" class="form-control" placeholder="Tuotteen nimi"></td>
+                <td style="width: 20%">
+                    <input type="number" class="form-control" value="1">
+                </td>
+                <td style="width: 20%">
+                    <select class="form-control">
+                        <option selected>kpl</option>
+                        <option>pkt</option>
+                    </select>
+                </td>
+                <td style="width: 20%">
+                    <select class="form-control" disabled>
+                        <option></option>
+                    </select>
+                </td>
+                <td style="width: 20%"><button class="btn btn-success">Lisää</button></td>
+            </form>
         </tr>
     </tbody>
 </table>

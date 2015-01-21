@@ -18,15 +18,12 @@
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="nav navbar-nav">
             <!-- Navigaation linkit -->
-            <li><a href="{{base_path}}/lists/1">Ruokakauppa</a></li>
-            <li><a href="{{base_path}}/lists/2">Ikea</a></li>
+            <li><a href="{{base_path}}/products/all">Kaikki</a></li>
+            <li><a href="{{base_path}}/products/favorites">Suosikit</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    {% block list %} {% endblock %}
-    <div style="text-align: center;vertical-align: middle;">
-        <button class="btn btn-success btn-lg"">Päivitä lista</button>
-    </div>
+    {% block product_list %} {% endblock %}
 {% endblock %}

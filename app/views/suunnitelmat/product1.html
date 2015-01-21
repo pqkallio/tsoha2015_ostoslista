@@ -1,0 +1,30 @@
+{% extends "/suunnitelmat/base.html" %}
+
+{% block content %}
+
+<div id="list_header" style="display:block;clear:both;">
+    <div id="shared_with" style="display:inline-block;float:left;vertical-align:middle;"><h3>Banaani</h3></div>
+    <div id="shared_with" style="display:inline-block;float:left;margin-left:15px;vertical-align:middle;"><button class="btn btn-primary">Muuta nimeä</button></div>
+    <div id="shared_with" style="display:inline-block;float:right;"><button class="btn btn-danger">×</button></div>
+</div>
+<br/>
+
+<table class="table table-responsive">
+    <tbody>
+        <tr>
+            <td>Yksiköt</td>
+            <td>
+                <label class="label label-primary">kappale</label>
+                <label class="label label-default">kilogramma</label>
+            </td>
+            <td><button class="btn btn-primary">Muokkaa</button></td>
+        </tr>
+        <tr>
+            <td>Osasto</td>
+            <td><label class="label label-primary">hedelmät ja vihannekset</label></td>
+            <td><button class="btn btn-primary">Muokkaa</button></td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}
