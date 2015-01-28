@@ -1,5 +1,5 @@
 <?php
-
+  
   class HelloWorldController extends BaseController{
 
     public static function index(){
@@ -36,6 +36,8 @@
 
     public static function sandbox(){
       // Testaa koodiasi täällä	
-      self::render_view('helloworld.html');
+      $products = Product::all();
+      
+      print_r($products);
     }
   }

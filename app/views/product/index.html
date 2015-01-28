@@ -1,0 +1,40 @@
+{% extends "suunnitelmat/products_navi.html" %}
+
+{% block product_list %}
+<p>{{message}}</p>
+<div style="display: block;clear:both;">
+    <h4 style="display:inline-block;float:left">Kaikki tuotteet</h4>
+    <form style="display:inline-block;float:right" action="{{base_path}}/product/new" method="GET">
+        <input type="submit" class="btn btn-success" value="Lisää tuote">
+    </form>
+</div>
+<hr/>
+<table class="table table-responsive table-striped table-hover">
+    <thead>
+        <th>Nimi</th>
+        <th>Yksiköt</th>
+        <th>Osasto</th>
+        <th>Suosikki</th>
+        <th>Poista</th>
+    </thead>
+    <tbody>
+        {% for i in 0..products|length-1 %}
+        <tr>
+            <td><a href="{{base_path}}/product/{{products[i].id}}">{{products[i].name}}</a></td>
+            <td>
+                <label class="label label-primary">{{product_units[i].name_singular}}</label>
+            </td>
+            <td><label class="label label-primary">{{product_departments[i].name}}</label></td>
+            <td><button class="btn btn-warning">☆</button></td>
+            <td>
+                <form action="{{base_path}}/product/{{products[i].id}}/delete" method="post">
+                    <input type="submit" value="×" class="btn btn-danger">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+</table>
+
+{% endblock %}

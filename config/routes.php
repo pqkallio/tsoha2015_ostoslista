@@ -17,11 +17,15 @@
   });
   
   $app->get('/products', function() {
-    HelloWorldController::products();
+      ProductController::index();
   });
   
-  $app->get('/products/all', function() {
-    HelloWorldController::products();
+  $app->post('/products', function() {
+      ProductController::store();
+  });
+  
+  $app->get('/product/new', function() {
+      ProductController::create();
   });
   
   $app->get('/products/favorites', function() {
@@ -36,6 +40,10 @@
     HelloWorldController::list2();
   });
   
-  $app->get('/products/1', function() {
-    HelloWorldController::product1();
+  $app->get('/product/:id', function($id) {
+      ProductController::show($id);
+  });
+  
+  $app->post('/product/:id/delete', function($id) {
+      ProductController::delete($id);
   });
