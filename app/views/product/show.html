@@ -7,14 +7,18 @@
 <div id="list_header" style="display:block;clear:both;">
     <div id="shared_with" style="display:inline-block;float:left;vertical-align:middle;"><h3>{{product.name}}</h3></div>
     <div id="shared_with" style="display:inline-block;float:left;margin-left:15px;vertical-align:middle;"><button class="btn btn-primary">Muuta nimeä</button></div>
-    <div id="shared_with" style="display:inline-block;float:right;"><button class="btn btn-danger">×</button></div>
+    <div id="shared_with" style="display:inline-block;float:right;">
+        <form action="{{base_path}}/product/{{product.id}}/delete" method="post">
+            <input type="submit" value="×" class="btn btn-danger">
+        </form>
+    </div>
 </div>
 <br/>
 
 <table class="table table-responsive">
     <tbody>
         <tr>
-            <td>Yksiköt</td>
+            <td>Yksikkö</td>
             <td>
                 <label class="label label-primary">{{product_unit.name_singular}}</label>
             </td>
