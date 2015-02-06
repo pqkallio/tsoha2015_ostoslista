@@ -7,7 +7,7 @@
 
     <title>
       {% block title %}
-        Tietokantasovellus
+        Shopping List 3000
       {% endblock %}
     </title>
 
@@ -33,19 +33,38 @@
             <span class="icon-bar"></span>
           </button>
           <!-- Sovelluksen nimi -->
-          <a class="navbar-brand" href="{{base_path}}">Tsoha Bootstrap</a>
+          <!--<a class="navbar-brand" href="{{base_path}}">Tsoha Bootstrap</a>-->
         </div>
 
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="nav navbar-nav">
             <!-- Navigaation linkit -->
-            <li><a href="{{base_path}}">Etusivu</a></li>
+            <li><a href="{{base_path}}/lists">Listat</a></li>
+            <li><a href="{{base_path}}/products">Tuotteet</a></li>
+            <li><a href="{{base_path}}/users">Käyttäjät</a></li>
+            {% if user_logged_in == null %}
+                <li>
+                    <form action="{{base_path}}/login" method="get">
+                        <input type="submit" value="Kirjaudu sisään"/>
+                    </form>
+                </li>
+            {% else %}
+                <li>
+                    <form action="{{base_path}}/logout" method="post">
+                        <input type="submit" value="Kirjaudu ulos"/>
+                    </form>
+                </li>
+            {% endif %}
+            {% if user_logged_in != null %}
+                <li><a href="{{base_path}}/user/{{user_logged_in.id}}">{{user_logged_in.user_name}}</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>
     </nav>
 
     <div id="main-container">
+        <p>{{message}}</p>
       <!-- Dynaaminen sisältö tulee tähän -->
       {% block content %}{% endblock %}
     </div>

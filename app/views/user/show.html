@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>{{message}}</p>
+
+<div id="list_header" style="display:block;clear:both;">
+    <div id="shared_with" style="display:inline-block;float:left;vertical-align:middle;"><h3>{{user.first_name}} {{user.last_name}}</h3></div>
+    {% if user.id == user_logged_in.id %}
+        <div id="shared_with" style="display:inline-block;float:right;">
+            <form action="{{base_path}}/user/{{user.id}}/edit" method="get">
+                <input style="display:inline-block;" type="submit" value="Muokkaa" class="btn btn-alert">
+            </form>
+        </div>
+    {% endif %}
+</div>
+<br/>
+
+<table class="table table-responsive">
+    <tbody>
+        <tr>
+            <td>Käyttäjänimi</td>
+            <td>{{user.user_name}}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

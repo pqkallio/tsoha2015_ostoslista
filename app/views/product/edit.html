@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Lisää uusi tuote</h2><br/>
+{% if name_original != null %}
+    <h2>Muokkaa tuotetta <em>{{name_original}}</em></h2><br/>
+{% else %}
+    <h2>Muokkaa tuotetta <em>{{attributes.name}}</em></h2><br/>
+{% endif %}
 
 {% if errors %}
     <div class="alert alert-danger">
@@ -13,10 +17,10 @@
     </div>
 {% endif %}
 
-<form action="{{base_path}}/products" method="POST">
+<form action="{{base_path}}/product/{{attributes.id}}/edit" method="POST">
     <div class="form-group">
         <label for="name">Nimi</label>
-        <input type="text" placeholder="Tuote" value="{{attributes.name}}" name="name">
+        <input type="text" value="{{attributes.name}}" name="name">
     </div>
     <div class="form-group">
         <label for="unit">Yksikkö</label>
@@ -44,7 +48,7 @@
             {% endfor %}
         </select>
     </div>
-    <input type="submit" value="Lisää!" class="btn btn-success">
+    <input type="submit" value="Tallenna muutokset!" class="btn btn-success">
 </form>
 
 {% endblock %}

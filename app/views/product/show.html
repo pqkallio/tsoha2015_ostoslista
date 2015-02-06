@@ -1,4 +1,4 @@
-{% extends "/suunnitelmat/base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 
@@ -6,10 +6,12 @@
 
 <div id="list_header" style="display:block;clear:both;">
     <div id="shared_with" style="display:inline-block;float:left;vertical-align:middle;"><h3>{{product.name}}</h3></div>
-    <div id="shared_with" style="display:inline-block;float:left;margin-left:15px;vertical-align:middle;"><button class="btn btn-primary">Muuta nimeä</button></div>
     <div id="shared_with" style="display:inline-block;float:right;">
+        <form action="{{base_path}}/product/{{product.id}}/edit" method="get">
+            <input style="display:inline-block;" type="submit" value="Muokkaa" class="btn btn-alert">
+        </form>
         <form action="{{base_path}}/product/{{product.id}}/delete" method="post">
-            <input type="submit" value="×" class="btn btn-danger">
+            <input style="display:inline-block;" type="submit" value="Poista" class="btn btn-danger">
         </form>
     </div>
 </div>
@@ -22,12 +24,10 @@
             <td>
                 <label class="label label-primary">{{product_unit.name_singular}}</label>
             </td>
-            <td><button class="btn btn-primary">Muokkaa</button></td>
         </tr>
         <tr>
             <td>Osasto</td>
             <td><label class="label label-primary">{{product_department.name}}</label></td>
-            <td><button class="btn btn-primary">Muokkaa</button></td>
         </tr>
     </tbody>
 </table>

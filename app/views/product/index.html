@@ -1,4 +1,4 @@
-{% extends "suunnitelmat/products_navi.html" %}
+{% extends "product/products_navi.html" %}
 
 {% block product_list %}
 <p>{{message}}</p>
@@ -18,21 +18,31 @@
         <th>Poista</th>
     </thead>
     <tbody>
-        {% for i in 0..products|length-1 %}
-        <tr>
-            <td><a href="{{base_path}}/product/{{products[i].id}}">{{products[i].name}}</a></td>
-            <td>
-                <label class="label label-primary">{{product_units[i].name_singular}}</label>
-            </td>
-            <td><label class="label label-primary">{{product_departments[i].name}}</label></td>
-            <td><button class="btn btn-warning">☆</button></td>
-            <td>
-                <form action="{{base_path}}/product/{{products[i].id}}/delete" method="post">
-                    <input type="submit" value="×" class="btn btn-danger">
-                </form>
-            </td>
-        </tr>
-        {% endfor %}
+        {% if products %}
+            {% for i in 0..products|length-1 %}
+            <tr>
+                <td><a href="{{base_path}}/product/{{products[i].id}}">{{products[i].name}}</a></td>
+                <td>
+                    <label class="label label-primary">{{product_units[i].name_singular}}</label>
+                </td>
+                <td><label class="label label-primary">{{product_departments[i].name}}</label></td>
+                <td>
+                    <form action="{{base_path}}/product/{{products[i].id}}/fave" method="post">
+                        {% if products[i].favorite == true %}
+                            <input type="submit" value="☆" class="btn btn-warning">
+                        {% else %}
+                            <input type="submit" value="☆" class="btn btn-default">
+                        {% endif %}
+                    </form>
+                </td>
+                <td>
+                    <form action="{{base_path}}/product/{{products[i].id}}/delete" onclick="return confirm('Tuote {{products[i].name}} poistetaan pysyvästi!')" method="post">
+                        <input type="submit" value="×" class="btn btn-danger">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        {% endif %}
     </tbody>
     
 </table>
