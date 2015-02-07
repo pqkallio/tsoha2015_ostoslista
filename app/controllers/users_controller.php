@@ -38,7 +38,7 @@ class UserController extends BaseController {
         } else {
             $_SESSION['user'] = $user->id;
             
-            self::redirect_to('/products', array('message' => 'Tervetuloa takaisin ' 
+            self::redirect_to('/lists', array('message' => 'Tervetuloa takaisin ' 
                 . $user->first_name . '!'));
         }
     }

@@ -31,6 +31,7 @@ class ShoppingList extends BaseModel {
     
     public static function find($id) {
         $rows = DB::query('SELECT * FROM List WHERE id = :id LIMIT 1', array('id' => $id));
+        $shopping_list = null;
         
         if (count($rows) > 0) {
             $row = $rows(0);

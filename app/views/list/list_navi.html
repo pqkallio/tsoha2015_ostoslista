@@ -20,7 +20,7 @@
             <!-- Navigaation linkit -->
             {% for list in lists %}
                 {% if list.id == active_list.id %}
-                <li style="color:#000000;"><a><strong>{{list.name}}</strong></a></li>
+                <li><a style="color:#000000;cursor:default;background-color:#cccccc"><strong>{{list.name}}</strong></a></li>
                 {% else %}
                     <li><a href="{{base_path}}/list/{{list.id}}/set_active">{{list.name}}</a></li>
                 {% endif %}
@@ -32,6 +32,6 @@
 
     {% block list %} {% endblock %}
     <div style="text-align: center;vertical-align: middle;">
-        <button class="btn btn-success btn-lg"">Päivitä lista</button>
+        <button type="submit" form="products" value="Submit" class="btn btn-success btn-lg">Päivitä lista</button>
     </div>
 {% endblock %}

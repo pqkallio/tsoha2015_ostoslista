@@ -32,8 +32,8 @@
       ShoppingListController::index();
   });
   
-  $app->get('/list/:id', function($params) {
-      ShoppingListController::show($params);
+  $app->get('/list/:id', function($id) {
+      ShoppingListController::show($id);
   });
   
   $app->get('/list/:id/set_active', function($id) {

@@ -6,6 +6,7 @@
     <div id="shared_with" style="display:inline-block;float:right;"><button class="btn btn-primary">Jaa lista!</button></div>
 </div>
 <div id="listan_kauppa" style="display:block;clear:both;">Kauppa: <label class="label label-primary">Prisma, Riihimäki</label></div>-->
+<form action="{{base_path}}/list/{{active_list.id}}/update" method="post" id="products">
 <table class="table table-responsive table-striped table-hover">
     <thead>
         <tr>
@@ -15,37 +16,49 @@
             <th><button class="btn btn-danger">Poista lista</button></th>
         </tr>
     </thead>
+    {% if purchases %}
     <tbody>
-        <tr>
-            <td>Banaani</td>
-            <td colspan="2">4 kpl</td>
-            <td>hevi</td>
-            <td><input class='checkbox checkbox-inline' type="checkbox" checked></td>
+        {% for i in 0..purchases|length-1 %}
+        <tr>    
+            <td>{{products[i].name}}</td>
+            <td colspan="2">{{purchases[i].amount}} {{units[i].abbreviation}}</td>
+            {% if departments[i] %}
+                <td>{{departments[i].abbreviation}}</td>
+            {% else %}
+                <td>-</td>
+            {% endif %}
+            <td><input name="{{purchases[i].id}}" class='checkbox checkbox-inline' type="checkbox" style="transform: scale(1.5);"></td>
         </tr>
-        <tr>
-            <form id="add_purchase" class="form-inline">
-                <td><input type="text" class="form-control" placeholder="Tuotteen nimi"></td>
-                <td>
-                    <input type="number" class="form-control" value="1">
-                </td>
-                <td>
-                    <select class="form-control">
-                        <option selected="selected">kpl</option>
-                        <option>l</option>
-                        <option>tlk</option>
-                    </select>
-                </td>
-                <td>
-                    <select class="form-control">
-                        <option>elektroniikka</option>
-                        <option>hevi</option>
-                        <option>maitotuotteet</option>
-                    </select>
-                </td>
-                <td><button class="btn btn-success">Lisää</button></td>
-            </form>
-        </tr>
+        {% endfor %}
     </tbody>
+    {% endif %}
 </table>
+</form>
+<form id="add_purchase" class="form-inline">
+<table class="table table-responsive table-striped table-hover">
+    <tr>    
+        <td><input type="text" class="form-control" placeholder="Tuotteen nimi"></td>
+        <td>
+            <input type="number" class="form-control" value="1">
+        </td>
+        <td>
+            <select class="form-control">
+                <option selected="selected">kpl</option>
+                <option>l</option>
+                <option>tlk</option>
+            </select>
+        </td>
+        <td>
+            <select class="form-control">
+                <option>elektroniikka</option>
+                <option>hevi</option>
+                <option>maitotuotteet</option>
+            </select>
+        </td>
+        <td><button class="btn btn-success">Lisää</button></td>
+
+    </tr>
+</table>
+</form>
 
 {% endblock %}
