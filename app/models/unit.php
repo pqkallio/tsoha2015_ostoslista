@@ -45,4 +45,34 @@ class Unit extends BaseModel {
         
         return $unit;
     }
+    
+    public static function update($id, $attributes) {
+        DB::query('UPDATE Unit '
+                . 'SET name_singular = :name_singular, '
+                . '    name_plural = :name_plural, '
+                . '    abbreviation = :abbreviation '
+                . 'WHERE id = :id',
+                array('name_singular' => $attributes['name_singular'],
+                      'name_plural'   => $attributes['name_plural'],
+                      'abbreviation'  => $attributes['abbreviation'],
+                      'id'            => $id));
+    }
+    
+    public static function create($attributes) {
+        $rows = DB::query('INSERT INTO Unit (name_singular, name_plural, abbreviation) '
+                        . 'VALUES (:name_singular, :name_plural, :abbreviation) '
+                        . 'RETURNING ID',
+                        array('name_singular' => $attributes['name_singular'],
+                              'name_plural'   => $attributes['name_plural'],
+                              'abbreviation'  => $attributes['abbreviation']
+                        ));
+        
+        if (count($rows) > 0) {
+            $row = $rows[0];
+            
+            $last_id = $row['id'];
+        }
+        
+        return $last_id;
+    }
 }

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>{{message}}</p>
+
+<div id="list_header" style="display:block;clear:both;">
+    <div id="shared_with" style="display:inline-block;float:left;vertical-align:middle;"><h3>{{department.name}}</h3></div>
+    <div id="shared_with" style="display:inline-block;float:right;">
+        <form action="{{base_path}}/department/{{unit.id}}/edit" method="get">
+            <input style="display:inline-block;" type="submit" value="Muokkaa" class="btn btn-alert">
+        </form>
+        <form action="{{base_path}}/department/{{unit.id}}/delete" method="post">
+            <input style="display:inline-block;" type="submit" value="Poista" class="btn btn-danger">
+        </form>
+    </div>
+</div>
+<br/>
+
+<table class="table table-responsive">
+    <tbody>
+        <tr>
+            <td>Osasto</td>
+            <td>
+                <label class="label label-primary">{{department.name}}</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Lyhenne</td>
+            <td><label class="label label-primary">{{department.abbreviation}}</label></td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

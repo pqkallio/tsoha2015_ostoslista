@@ -32,12 +32,32 @@
       ShoppingListController::index();
   });
   
+  $app->get('/list/start', function() {
+      ShoppingListController::start();
+  });
+  
+  $app->post('/list/new', function() {
+      ShoppingListController::create();
+  });
+  
   $app->get('/list/:id', function($id) {
       ShoppingListController::show($id);
   });
   
+  $app->post('/list/:id/update', function($id) {
+      PurchaseController::set_purchase_date($id);
+  });
+  
+  $app->post('/list/:id/delete', function($id) {
+      ShoppingListController::destroy($id);
+  });
+  
   $app->get('/list/:id/set_active', function($id) {
       ShoppingListController::set_active($id);
+  });
+  
+  $app->post('/purchases', function() {
+      PurchaseController::store();
   });
   
   $app->get('/products', function() {
@@ -56,16 +76,32 @@
       ProductController::fave($id);
   });
   
-  $app->get('/products/favorites', function() {
-    HelloWorldController::favorites();
+  $app->get('/units', function() {
+      UnitController::index();
   });
   
-  $app->get('/lists/1', function() {
-    HelloWorldController::list1();
+  $app->get('/unit/new', function() {
+      UnitController::create();
   });
   
-  $app->get('/lists/2', function() {
-    HelloWorldController::list2();
+  $app->get('/unit/:id', function($id) {
+      UnitController::show($id);
+  });
+  
+  $app->get('/unit/:id/edit', function($id) {
+      UnitController::edit($id);
+  });
+  
+  $app->post('/unit/:id/edit', function($id) {
+      UnitController::update($id);
+  });
+  
+  $app->post('/units', function() {
+      UnitController::store();
+  });
+  
+  $app->get('/product/favorites', function() {
+      ProductController::favorites();
   });
   
   $app->get('/product/:id', function($id) {
@@ -81,5 +117,17 @@
   }); 
   
   $app->post('/product/:id/delete', function($id) {
-      ProductController::delete($id);
+      ProductController::destroy($id);
+  });
+  
+  $app->get('/department/:id', function($id) {
+      DepartmentController::show($id);
+  });
+  
+  $app->get('/department/:id/edit', function($id) {
+      DepartmentController::edit($id);
+  });
+  
+  $app->post('/department/:id/edit', function($id) {
+      DepartmentController::update($id);
   });

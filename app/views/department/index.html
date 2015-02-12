@@ -1,0 +1,36 @@
+{% extends "product/products_navi.html" %}
+
+{% block product_list %}
+<p>{{message}}</p>
+<div style="display: block;clear:both;">
+    <h4 style="display:inline-block;float:left">Kaikki yksiköt</h4>
+    <form style="display:inline-block;float:right" action="{{base_path}}/department/new" method="GET">
+        <input type="submit" class="btn btn-success" value="Lisää osasto">
+    </form>
+</div>
+<hr/>
+<table class="table table-responsive table-striped table-hover">
+    <thead>
+        <th>Nimi</th>
+        <th>Lyhenne</th>
+        <th>Poista</th>
+    </thead>
+    <tbody>
+        {% if departments %}
+            {% for department in departments %}
+            <tr>
+                <td><a href="{{base_path}}/department/{{department.id}}/edit">{{department.name}}</a></td>
+                <td>{{department.abbreviation}}</td>
+                <td>
+                    <form action="{{base_path}}/department/{{department.id}}/delete" onclick="return confirm('Osasto <em>{{department.name}}</em> poistetaan pysyvästi!')" method="post">
+                        <input type="submit" value="×" class="btn btn-danger">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        {% endif %}
+    </tbody>
+    
+</table>
+
+{% endblock %}

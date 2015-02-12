@@ -18,20 +18,36 @@
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="nav navbar-nav">
             <!-- Navigaation linkit -->
-            {% for list in lists %}
-                {% if list.id == active_list.id %}
-                <li><a style="color:#000000;cursor:default;background-color:#cccccc"><strong>{{list.name}}</strong></a></li>
-                {% else %}
-                    <li><a href="{{base_path}}/list/{{list.id}}/set_active">{{list.name}}</a></li>
-                {% endif %}
-            {% endfor %}
+            {% if lists %}
+                {% for list in lists %}
+                    {% if list.id == active_list.id %}
+                        <li><a style="color:#000000;cursor:default;background-color:#cccccc"><strong>{{list.name}}</strong></a></li>
+                    {% else %}
+                        <li><a href="{{base_path}}/list/{{list.id}}/set_active">{{list.name}}</a></li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <li>
+                <form style="position:relative;left:10px;" action="{{base_path}}/list/new" method="post">
+                    <input type="text" placeholder="Uusi lista" name="name"/>
+                    <button type="submit" value="Submit" class="btn btn-primary">Lisää!</button>
+                </form>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-
+    {% if active_list %}
+    <div style="text-align: center;vertical-align: middle;">
+        <form action="{{base_path}}/list/{{active_list.id}}/delete" method="post" onclick="return confirm('Lista {{active_list.name}} poistetaan pysyvästi!')">
+            <button type="submit" value="Submit" class="btn btn-danger">Poista lista</button>
+        </form>
+    </div>
+    {% endif %}
     {% block list %} {% endblock %}
+    {% if active_list %}
     <div style="text-align: center;vertical-align: middle;">
         <button type="submit" form="products" value="Submit" class="btn btn-success btn-lg">Päivitä lista</button>
     </div>
+    {% endif %}
 {% endblock %}

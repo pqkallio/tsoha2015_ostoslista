@@ -119,6 +119,29 @@ class Product extends BaseModel {
         
         return $product;
     }
+
+    public static function find_by_name($user, $name) {
+        $product = null;
+        $rows = DB::query('SELECT * FROM Product '
+                        . 'WHERE owner = :owner AND name = :name LIMIT 1',
+                array('owner' => $user, 'name' => $name));
+        
+        if (count($rows) > 0) {
+            $row = $rows[0];
+            
+            $product = new Product(array(
+                'id' => $row['id'],
+                'name' => $row['name'],
+                'department' => $row['department'],
+                'unit' => $row['unit'],
+                'owner' => $row['owner']
+            ));
+            
+            $product->favorite = self::is_favorite($product->id, $product->owner);
+        }
+        
+        return $product;
+    }
     
     public static function find_by_owner($user) {
         $products = array();
@@ -158,7 +181,7 @@ class Product extends BaseModel {
     public static function create($params) {
         $rows = DB::query('INSERT INTO Product (name, department, unit, owner) '
                 . 'VALUES (:name, :department, :unit, :owner) RETURNING id',
-                array('name' => $params['name'], 
+                array('name' => strtolower(trim($params['name'])), 
                     'department' => $params['department'],
                     'unit' => $params['unit'],
                     'owner' => $params['owner']));

@@ -3,9 +3,7 @@
 class ProductController extends BaseController {
     
     public static function index() {
-        if (!parent::get_user_logged_in()) {
-            self::redirect_to('/login');
-        }
+        self::check_logged_in();
         
         $products = Product::find_by_owner(parent::get_user_logged_in()->id);
         $product_units = array();
@@ -20,7 +18,24 @@ class ProductController extends BaseController {
             'product_units' => $product_units, 'product_departments' => $product_departments));
     }
     
+    public static function favorites() {
+        self::check_logged_in();
+        
+        $products = Product::find_by_owner(parent::get_user_logged_in()->id);
+        $product_units = array();
+        $product_departments = array();
+        
+        foreach ($products as $product) {
+            array_push($product_units, Unit::find($product->unit));
+            array_push($product_departments, Department::find($product->department));
+        }
+        
+        self::render_view('product/favorites.html', array('products' => $products, 
+            'product_units' => $product_units, 'product_departments' => $product_departments));
+    }
+
     public static function show($id) {
+        self::check_logged_in();
         $product = self::check_ownership_and_existence($id);
         
         if (!$product) {
@@ -35,6 +50,7 @@ class ProductController extends BaseController {
     }
     
     public static function edit($id) {
+        self::check_logged_in();
         $product = self::check_ownership_and_existence($id);
         
         if (!$product) {
@@ -48,6 +64,7 @@ class ProductController extends BaseController {
     }
     
     public static function fave($id) {
+        self::check_logged_in();
         $product = self::check_ownership_and_existence($id);
         
         if ($product) {
@@ -57,7 +74,8 @@ class ProductController extends BaseController {
         self::redirect_to('/products');
     }
 
-    public static function delete($id) {
+    public static function destroy($id) {
+        self::check_logged_in();
         $product = self::check_ownership_and_existence($id);
         
         if ($product) {
@@ -70,6 +88,7 @@ class ProductController extends BaseController {
     }
     
     public static function create() {
+        self::check_logged_in();
         $units = Unit::all();
         $departments = Department::all();
         
@@ -77,12 +96,13 @@ class ProductController extends BaseController {
     }
     
     public static function store() {
+        self::check_logged_in();
         $params = $_POST;
         $units = Unit::all();
         $departments = Department::all();
         
         $attributes = array(
-            'name' => $params['name'],
+            'name' => strtolower(trim($params['name'])),
             'department' => $params['department'],
             'unit' => $params['unit'],
             'owner' => parent::get_user_logged_in()->id
@@ -101,6 +121,7 @@ class ProductController extends BaseController {
     }
     
     public static function update($id) {
+        self::check_logged_in();
         $params = $_POST;
         $units = Unit::all();
         $departments = Department::all();

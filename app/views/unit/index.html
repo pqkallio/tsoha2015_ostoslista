@@ -1,0 +1,38 @@
+{% extends "product/products_navi.html" %}
+
+{% block product_list %}
+<p>{{message}}</p>
+<div style="display: block;clear:both;">
+    <h4 style="display:inline-block;float:left">Kaikki yksiköt</h4>
+    <form style="display:inline-block;float:right" action="{{base_path}}/unit/new" method="GET">
+        <input type="submit" class="btn btn-success" value="Lisää yksikkö">
+    </form>
+</div>
+<hr/>
+<table class="table table-responsive table-striped table-hover">
+    <thead>
+        <th>Yksikkö</th>
+        <th>Monikko</th>
+        <th>Lyhenne</th>
+        <th>Poista</th>
+    </thead>
+    <tbody>
+        {% if units %}
+            {% for unit in units %}
+            <tr>
+                <td><a href="{{base_path}}/unit/{{unit.id}}/edit">{{unit.name_singular}}</a></td>
+                <td>{{unit.name_plural}}</td>
+                <td>{{unit.abbreviation}}</td>
+                <td>
+                    <form action="{{base_path}}/unit/{{unit.id}}/delete" onclick="return confirm('Yksikkö {{unit.name_singular}} poistetaan pysyvästi!')" method="post">
+                        <input type="submit" value="×" class="btn btn-danger">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        {% endif %}
+    </tbody>
+    
+</table>
+
+{% endblock %}

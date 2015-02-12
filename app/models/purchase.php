@@ -52,8 +52,9 @@ class Purchase extends BaseModel {
     
     public static function find_by_list($shopping_list) {
         $purchases = array();
-        $rows = DB::query('SELECT * FROM Purchase WHERE list = :shopping_list', 
-                array('shopping_list' => $shopping_list));
+        $rows = DB::query('SELECT * FROM Purchase '
+                        . 'WHERE list = :shopping_list AND purchase_date IS NULL', 
+                            array('shopping_list' => $shopping_list));
         
         
         foreach ($rows as $row) {
@@ -63,8 +64,7 @@ class Purchase extends BaseModel {
                 'product' => $row['product'],
                 'department' => $row['department'],
                 'unit' => $row['unit'],
-                'amount' => $row['amount'],
-                'purchase_date' => $row['purchase_date']
+                'amount' => $row['amount']
             ));
         }
         
@@ -74,7 +74,7 @@ class Purchase extends BaseModel {
     public static function create($params) {
         $rows = DB::query('INSERT INTO Purchase (list, product, department, unit, amount) '
                 . 'VALUES (:list, :product, :department, :unit, :amount) RETURNING id',
-                array('list' => $params['shopping_list'], 
+                array('list' => $params['list'], 
                     'product' => $params['product'],
                     'department' => $params['department'],
                     'unit' => $params['unit'],
@@ -84,6 +84,15 @@ class Purchase extends BaseModel {
         return $last_id['id'];
     }
     
+    public static function set_purchase_date($purchase_ids) {
+        foreach (array_keys($purchase_ids) as $id) {
+            DB::query('UPDATE Purchase '
+                    . 'SET purchase_date = NOW() '
+                    . 'WHERE id = :id',
+                    array('id' => $id));
+        }
+    }
+
     public static function delete($id) {
         DB::query('DELETE FROM Purchase WHERE id = :id', array('id' => $id));
     }

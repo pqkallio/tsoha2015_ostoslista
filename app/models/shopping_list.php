@@ -83,10 +83,10 @@ class ShoppingList extends BaseModel {
     }
 
     public static function create($params) {
-        self::remove_users_active_list($params['user'].id);
+        self::remove_users_active_list($params['user']);
         
-        $rows = DB::query('INSERT INTO List (name, owner, shop) '
-                        . 'VALUES (:name, :owner, null) RETURNING id', 
+        $rows = DB::query('INSERT INTO List (name, owner) '
+                        . 'VALUES (:name, :owner) RETURNING id', 
                         array('name' => $params['name'], 
                             'owner' => $params['user']));
 
