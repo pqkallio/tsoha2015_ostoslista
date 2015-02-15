@@ -16,10 +16,5 @@ Ostoslistasovellus mahdollistaa ostoslistojen tekemisen sekä listojen jakamisen
 - [Kauppalistat](http://pqkallio.users.cs.helsinki.fi/tsoha2015/lists)
 - [Käyttäjät](http://pqkallio.users.cs.helsinki.fi/tsoha2015/users)
 - [Uuden tuotteen lisääminen](http://pqkallio.users.cs.helsinki.fi/tsoha2015/product/new)
-- [Yksittäisen tuotteen esittelysivu (muotoa /product/id)](http://pqkallio.users.cs.helsinki.fi/tsoha2015/product/3)
-
-Poistopainikkeet sekä listaussivulla että esittelysivulla toimivat.
-
-## Linkkejä staattisille sivuille
-
-- http://pqkallio.users.cs.helsinki.fi/tsoha2015/products/favorites
+- [Yksittäisen tuotteen esittelysivu](http://pqkallio.users.cs.helsinki.fi/tsoha2015/product/3) (muotoa /product/id)
+- [Yksittäisen tuotteen muokkaamissivu](http://pqkallio.users.cs.helsinki.fi/tsoha2015/product/3/edit) (muotoa /product/id/edit)
