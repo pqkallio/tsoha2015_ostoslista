@@ -13,7 +13,7 @@ Ostoslistasovellus mahdollistaa ostoslistojen tekemisen sekä listojen jakamisen
 
 - [Kirjautumissivu](http://pqkallio.users.cs.helsinki.fi/tsoha2015/login) (Voit käyttää tunnuksia keke/kekru123 testaamiseen)
 - [Tuotteiden listaussivu](http://pqkallio.users.cs.helsinki.fi/tsoha2015/products)
-- [Kauppalistat](http://pqkallio.users.cs.helsinki.fi/tsoha2015/lists) (Huom! Aiheuttaa tällä hetkellä virhetilanteen, jos ei ole kirjautunut sisään ensin! Jos näin pääsi käymään, kirjoita osoitekenttään esim. osoite http://pqkallio.users.cs.helsinki.fi/tsoha2015/product/1)
+- [Kauppalistat](http://pqkallio.users.cs.helsinki.fi/tsoha2015/lists)
 - [Käyttäjät](http://pqkallio.users.cs.helsinki.fi/tsoha2015/users)
 - [Uuden tuotteen lisääminen](http://pqkallio.users.cs.helsinki.fi/tsoha2015/product/new)
 - [Yksittäisen tuotteen esittelysivu (muotoa /product/id)](http://pqkallio.users.cs.helsinki.fi/tsoha2015/product/3)
