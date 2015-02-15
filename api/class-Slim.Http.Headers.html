@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Slim\Http\Headers</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Slim.html">
+						Slim<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Slim.Exception.html">
+						Exception					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Slim.Helper.html">
+						Helper					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Slim.Http.html">
+						Http					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Slim.Middleware.html">
+						Middleware					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Slim.Http.Cookies.html">Cookies</a></li>
+				<li class="active"><a href="class-Slim.Http.Headers.html">Headers</a></li>
+				<li><a href="class-Slim.Http.Request.html">Request</a></li>
+				<li><a href="class-Slim.Http.Response.html">Response</a></li>
+				<li><a href="class-Slim.Http.Util.html">Util</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Slim.Http.html" title="Summary of Slim\Http"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Headers</h1>
+
+
+	<div class="description">
+	<p>HTTP Headers</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-Slim.Helper.Set.html"><span>Slim\Helper\Set</span></a>
+			
+			 implements 
+<span>ArrayAccess</span>, 
+			
+<span>Countable</span>, 
+			
+<span>IteratorAggregate</span>
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Slim\Http\Headers</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Slim.html">Slim</a>\<a href="namespace-Slim.Http.html">Http</a><br>
+		<b>Package:</b> Slim<br>
+
+				<b>Author:</b>
+				Josh Lockhart<br>
+				<b>Since:</b>
+				1.6.0<br>
+			<b>Located at</b> <a href="source-class-Slim.Http.Headers.html#35-104" title="Go to source code">vendor/Slim/Http/Headers.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="extract" id="_extract">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_extract">#</a>
+		<code><a href="source-class-Slim.Http.Headers.html#64-83" title="Go to source code">extract</a>( <span>array <var>$data</var></span> )</code>
+
+		<div class="description short">
+			<p>Extract HTTP headers from an array of data (e.g. $_SERVER)</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Extract HTTP headers from an array of data (e.g. $_SERVER)</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="normalizeKey" id="_normalizeKey">
+
+		<td class="attributes"><code>
+			 protected 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_normalizeKey">#</a>
+		<code><a href="source-class-Slim.Http.Headers.html#89-103" title="Go to source code">normalizeKey</a>( <span>string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			<p>Transform header name into canonical form</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Transform header name into canonical form</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Slim.Helper.Set.html#_normalizeKey">Slim\Helper\Set::normalizeKey()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Slim.Helper.Set.html#methods">Slim\Helper\Set</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Slim.Helper.Set.html#___construct">__construct()</a>, 
+			<a href="class-Slim.Helper.Set.html#___get">__get()</a>, 
+			<a href="class-Slim.Helper.Set.html#___isset">__isset()</a>, 
+			<a href="class-Slim.Helper.Set.html#___set">__set()</a>, 
+			<a href="class-Slim.Helper.Set.html#___unset">__unset()</a>, 
+			<a href="class-Slim.Helper.Set.html#_all">all()</a>, 
+			<a href="class-Slim.Helper.Set.html#_clear">clear()</a>, 
+			<a href="class-Slim.Helper.Set.html#_count">count()</a>, 
+			<a href="class-Slim.Helper.Set.html#_get">get()</a>, 
+			<a href="class-Slim.Helper.Set.html#_getIterator">getIterator()</a>, 
+			<a href="class-Slim.Helper.Set.html#_has">has()</a>, 
+			<a href="class-Slim.Helper.Set.html#_keys">keys()</a>, 
+			<a href="class-Slim.Helper.Set.html#_offsetExists">offsetExists()</a>, 
+			<a href="class-Slim.Helper.Set.html#_offsetGet">offsetGet()</a>, 
+			<a href="class-Slim.Helper.Set.html#_offsetSet">offsetSet()</a>, 
+			<a href="class-Slim.Helper.Set.html#_offsetUnset">offsetUnset()</a>, 
+			<a href="class-Slim.Helper.Set.html#_protect">protect()</a>, 
+			<a href="class-Slim.Helper.Set.html#_remove">remove()</a>, 
+			<a href="class-Slim.Helper.Set.html#_replace">replace()</a>, 
+			<a href="class-Slim.Helper.Set.html#_set">set()</a>, 
+			<a href="class-Slim.Helper.Set.html#_singleton">singleton()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="special" id="$special">
+		<td class="attributes"><code>
+			protected static 
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Slim.Http.Headers.html#48-62" title="Go to source code"><var>$special</var></a>
+
+			<div class="description short">
+				<p>Special-case HTTP headers that are otherwise unidentifiable as HTTP headers.
+Typically, HTTP headers in the $_SERVER array will be prefixed with
+<code>HTTP_</code> or <code>X_</code>. These are not so we list them here for later reference.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Special-case HTTP headers that are otherwise unidentifiable as HTTP headers.
+Typically, HTTP headers in the $_SERVER array will be prefixed with
+<code>HTTP_</code> or <code>X_</code>. These are not so we list them here for later reference.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$special" class="anchor">#</a>
+				<code><span class="php-keyword1">array</span>(
+    <span class="php-quote">'CONTENT_TYPE'</span>,
+    <span class="php-quote">'CONTENT_LENGTH'</span>,
+    <span class="php-quote">'PHP_AUTH_USER'</span>,
+    <span class="php-quote">'PHP_AUTH_PW'</span>,
+    <span class="php-quote">'PHP_AUTH_DIGEST'</span>,
+    <span class="php-quote">'AUTH_TYPE'</span>
+)</code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Slim.Helper.Set.html#properties">Slim\Helper\Set</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Slim.Helper.Set.html#$data"><var>$data</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

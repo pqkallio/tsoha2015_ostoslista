@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Slim\Http\Util</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Slim.html">
+						Slim<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Slim.Exception.html">
+						Exception					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Slim.Helper.html">
+						Helper					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Slim.Http.html">
+						Http					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Slim.Middleware.html">
+						Middleware					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Slim.Http.Cookies.html">Cookies</a></li>
+				<li><a href="class-Slim.Http.Headers.html">Headers</a></li>
+				<li><a href="class-Slim.Http.Request.html">Request</a></li>
+				<li><a href="class-Slim.Http.Response.html">Response</a></li>
+				<li class="active"><a href="class-Slim.Http.Util.html">Util</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Slim.Http.html" title="Summary of Slim\Http"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Util</h1>
+
+
+	<div class="description">
+	<p>Slim HTTP Utilities</p>
+
+<p>This class provides useful methods for handling HTTP requests.</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Slim.html">Slim</a>\<a href="namespace-Slim.Http.html">Http</a><br>
+		<b>Package:</b> Slim<br>
+
+				<b>Author:</b>
+				Josh Lockhart<br>
+				<b>Since:</b>
+				1.0.0<br>
+			<b>Located at</b> <a href="source-class-Slim.Http.Util.html#35-434" title="Go to source code">vendor/Slim/Http/Util.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="stripSlashesIfMagicQuotes" id="_stripSlashesIfMagicQuotes">
+
+		<td class="attributes"><code>
+			 public static
+
+			array|string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_stripSlashesIfMagicQuotes">#</a>
+		<code><a href="source-class-Slim.Http.Util.html#46-66" title="Go to source code">stripSlashesIfMagicQuotes</a>( <span>array|string <var>$rawData</var></span>, <span>boolean <var>$overrideStripSlashes</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Strip slashes from string or array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Strip slashes from string or array</p>
+
+<p>This method strips slashes from its input. By default, this method will only
+strip slashes from its input if magic quotes are enabled. Otherwise, you may
+override the magic quotes setting with either TRUE or FALSE as the send argument
+to force this method to strip or not strip slashes from its input.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$rawData</var></dt>
+					<dd></dd>
+					<dt><var>$overrideStripSlashes</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="stripSlashes" id="_stripSlashes">
+
+		<td class="attributes"><code>
+			 protected static
+
+			array|string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_stripSlashes">#</a>
+		<code><a href="source-class-Slim.Http.Util.html#68-76" title="Go to source code">stripSlashes</a>( <span>array|string <var>$rawData</var></span> )</code>
+
+		<div class="description short">
+			<p>Strip slashes from string or array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Strip slashes from string or array</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$rawData</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="encrypt" id="_encrypt">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_encrypt">#</a>
+		<code><a href="source-class-Slim.Http.Util.html#78-126" title="Go to source code">encrypt</a>( <span>string <var>$data</var></span>, <span>string <var>$key</var></span>, <span>string <var>$iv</var></span>, <span>array <var>$settings</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			<p>Encrypt data</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Encrypt data</p>
+
+<p>This method will encrypt data using a given key, vector, and cipher.
+By default, this will encrypt data using the RIJNDAEL/AES 256 bit cipher. You
+may override the default cipher and cipher mode by passing your own desired
+cipher and cipher mode as the final key-value array argument.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>The unencrypted data</dd>
+					<dt><var>$key</var></dt>
+					<dd>The encryption key</dd>
+					<dt><var>$iv</var></dt>
+					<dd>The encryption initialization vector</dd>
+					<dt><var>$settings</var></dt>
+					<dd>Optional key-value array with custom algorithm and mode</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="decrypt" id="_decrypt">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_decrypt">#</a>
+		<code><a href="source-class-Slim.Http.Util.html#128-177" title="Go to source code">decrypt</a>( <span>string <var>$data</var></span>, <span>string <var>$key</var></span>, <span>string <var>$iv</var></span>, <span>array <var>$settings</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			<p>Decrypt data</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Decrypt data</p>
+
+<p>This method will decrypt data using a given key, vector, and cipher.
+By default, this will decrypt data using the RIJNDAEL/AES 256 bit cipher. You
+may override the default cipher and cipher mode by passing your own desired
+cipher and cipher mode as the final key-value array argument.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>The encrypted data</dd>
+					<dt><var>$key</var></dt>
+					<dd>The encryption key</dd>
+					<dt><var>$iv</var></dt>
+					<dd>The encryption initialization vector</dd>
+					<dt><var>$settings</var></dt>
+					<dd>Optional key-value array with custom algorithm and mode</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="serializeCookies" id="_serializeCookies">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_serializeCookies">#</a>
+		<code><a href="source-class-Slim.Http.Util.html#179-209" title="Go to source code">serializeCookies</a>( <span><code><a href="class-Slim.Http.Headers.html">Slim\Http\Headers</a></code> <var>&amp; $headers</var></span>, <span><code><a href="class-Slim.Http.Cookies.html">Slim\Http\Cookies</a></code> <var>$cookies</var></span>, <span>array <var>$config</var></span> )</code>
+
+		<div class="description short">
+			<p>Serialize Response cookies into raw HTTP header</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Serialize Response cookies into raw HTTP header</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$headers</var></dt>
+					<dd>The Response headers</dd>
+					<dt><var>$cookies</var></dt>
+					<dd>The Response cookies</dd>
+					<dt><var>$config</var></dt>
+					<dd>The Slim app settings</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="encodeSecureCookie" id="_encodeSecureCookie">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_encodeSecureCookie">#</a>
+		<code><a href="source-class-Slim.Http.Util.html#211-243" title="Go to source code">encodeSecureCookie</a>( <span>string <var>$value</var></span>, <span>integer <var>$expires</var></span>, <span>string <var>$secret</var></span>, <span>integer <var>$algorithm</var></span>, <span>integer <var>$mode</var></span> )</code>
+
+		<div class="description short">
+			<p>Encode secure cookie value</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Encode secure cookie value</p>
+
+<p>This method will create the secure value of an HTTP cookie. The
+cookie value is encrypted and hashed so that its value is
+secure and checked for integrity when read in subsequent requests.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$value</var></dt>
+					<dd>The insecure HTTP cookie value</dd>
+					<dt><var>$expires</var></dt>
+					<dd>The UNIX timestamp at which this cookie will expire</dd>
+					<dt><var>$secret</var></dt>
+					<dd>The secret key used to hash the cookie value</dd>
+					<dt><var>$algorithm</var></dt>
+					<dd>The algorithm to use for encryption</dd>
+					<dt><var>$mode</var></dt>
+					<dd>The algorithm mode to use for encryption</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="decodeSecureCookie" id="_decodeSecureCookie">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean|string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_decodeSecureCookie">#</a>
+		<code><a href="source-class-Slim.Http.Util.html#245-282" title="Go to source code">decodeSecureCookie</a>( <span>string <var>$value</var></span>, <span>string <var>$secret</var></span>, <span>integer <var>$algorithm</var></span>, <span>integer <var>$mode</var></span> )</code>
+
+		<div class="description short">
+			<p>Decode secure cookie value</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Decode secure cookie value</p>
+
+<p>This method will decode the secure value of an HTTP cookie. The
+cookie value is encrypted and hashed so that its value is
+secure and checked for integrity when read in subsequent requests.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$value</var></dt>
+					<dd>The secure HTTP cookie value</dd>
+					<dt><var>$secret</var></dt>
+					<dd>The secret key used to hash the cookie value</dd>
+					<dt><var>$algorithm</var></dt>
+					<dd>The algorithm to use for encryption</dd>
+					<dt><var>$mode</var></dt>
+					<dd>The algorithm mode to use for encryption</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean|string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setCookieHeader" id="_setCookieHeader">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setCookieHeader">#</a>
+		<code><a href="source-class-Slim.Http.Util.html#284-342" title="Go to source code">setCookieHeader</a>( <span>array <var>&amp; $header</var></span>, <span>string <var>$name</var></span>, <span>string <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Set HTTP cookie header</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set HTTP cookie header</p>
+
+<p>This method will construct and set the HTTP <code>Set-Cookie</code> header. Slim
+uses this method instead of PHP's native <code>setcookie</code> method. This allows
+more control of the HTTP header irrespective of the native implementation's
+dependency on PHP versions.</p>
+
+<p>This method accepts the Slim_Http_Headers object by reference as its
+first argument; this method directly modifies this object instead of
+returning a value.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$header</var></dt>
+					<dd></dd>
+					<dt><var>$name</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteCookieHeader" id="_deleteCookieHeader">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteCookieHeader">#</a>
+		<code><a href="source-class-Slim.Http.Util.html#344-387" title="Go to source code">deleteCookieHeader</a>( <span>array <var>&amp; $header</var></span>, <span>string <var>$name</var></span>, <span>array <var>$value</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			<p>Delete HTTP cookie header</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Delete HTTP cookie header</p>
+
+<p>This method will construct and set the HTTP <code>Set-Cookie</code> header to invalidate
+a client-side HTTP cookie. If a cookie with the same name (and, optionally, domain)
+is already set in the HTTP response, it will also be removed. Slim uses this method
+instead of PHP's native <code>setcookie</code> method. This allows more control of the HTTP header
+irrespective of PHP's native implementation's dependency on PHP versions.</p>
+
+<p>This method accepts the Slim_Http_Headers object by reference as its
+first argument; this method directly modifies this object instead of
+returning a value.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$header</var></dt>
+					<dd></dd>
+					<dt><var>$name</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="parseCookieHeader" id="_parseCookieHeader">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_parseCookieHeader">#</a>
+		<code><a href="source-class-Slim.Http.Util.html#389-415" title="Go to source code">parseCookieHeader</a>( <span>string <var>$header</var></span> )</code>
+
+		<div class="description short">
+			<p>Parse cookie header</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Parse cookie header</p>
+
+<p>This method will parse the HTTP request's <code>Cookie</code> header
+and extract cookies into an associative array.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$header</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

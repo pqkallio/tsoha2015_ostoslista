@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Slim\Environment</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Slim.html">
+						Slim<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Slim.Exception.html">
+						Exception					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Slim.Helper.html">
+						Helper					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Slim.Http.html">
+						Http					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Slim.Middleware.html">
+						Middleware					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Slim.Environment.html">Environment</a></li>
+				<li><a href="class-Slim.Log.html">Log</a></li>
+				<li><a href="class-Slim.LogWriter.html">LogWriter</a></li>
+				<li><a href="class-Slim.Middleware.html">Middleware</a></li>
+				<li><a href="class-Slim.Route.html">Route</a></li>
+				<li><a href="class-Slim.Router.html">Router</a></li>
+				<li><a href="class-Slim.Slim.html">Slim</a></li>
+				<li><a href="class-Slim.View.html">View</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Slim.html" title="Summary of Slim"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Environment</h1>
+
+
+	<div class="description">
+	<p>Environment</p>
+
+<p>This class creates and returns a key/value array of common
+environment variables for the current HTTP request.</p>
+
+<p>This is a singleton class; derived environment variables will
+be common across multiple Slim applications.</p>
+
+<p>This class matches the Rack (Ruby) specification as closely
+as possible. More information available below.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Slim\Environment</span></b>			
+			 implements 
+<span>ArrayAccess</span>, 
+			
+<span>IteratorAggregate</span>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Slim.html">Slim</a><br>
+		<b>Package:</b> Slim<br>
+
+				<b>Author:</b>
+				Josh Lockhart<br>
+				<b>Since:</b>
+				1.6.0<br>
+			<b>Located at</b> <a href="source-class-Slim.Environment.html#35-224" title="Go to source code">vendor/Slim/Environment.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="getInstance" id="_getInstance">
+
+		<td class="attributes"><code>
+			 public static
+
+			<code><a href="class-Slim.Environment.html">Slim\Environment</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getInstance">#</a>
+		<code><a href="source-class-Slim.Environment.html#63-80" title="Go to source code">getInstance</a>( <span>boolean <var>$refresh</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			<p>Get environment instance (singleton)</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get environment instance (singleton)</p>
+
+<p>This creates and/or returns an environment instance (singleton)
+derived from $_SERVER variables. You may override the global server
+variables by using <code>\Slim\Environment::mock()</code> instead.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$refresh</var></dt>
+					<dd>Refresh properties using global server variables?</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Slim.Environment.html">Slim\Environment</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="mock" id="_mock">
+
+		<td class="attributes"><code>
+			 public static
+
+			<code><a href="class-Slim.Environment.html">Slim\Environment</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_mock">#</a>
+		<code><a href="source-class-Slim.Environment.html#82-109" title="Go to source code">mock</a>( <span>array <var>$userSettings</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			<p>Get mock environment instance</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get mock environment instance</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$userSettings</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Slim.Environment.html">Slim\Environment</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetExists" id="_offsetExists">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetExists">#</a>
+		<code><a href="source-class-Slim.Environment.html#179-185" title="Go to source code">offsetExists</a>( <span> <var>$offset</var></span> )</code>
+
+		<div class="description short">
+			<p>Array Access: Offset Exists</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Array Access: Offset Exists</p>
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetExists()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetGet" id="_offsetGet">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetGet">#</a>
+		<code><a href="source-class-Slim.Environment.html#187-197" title="Go to source code">offsetGet</a>( <span> <var>$offset</var></span> )</code>
+
+		<div class="description short">
+			<p>Array Access: Offset Get</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Array Access: Offset Get</p>
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetGet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetSet" id="_offsetSet">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetSet">#</a>
+		<code><a href="source-class-Slim.Environment.html#199-205" title="Go to source code">offsetSet</a>( <span> <var>$offset</var></span>, <span> <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Array Access: Offset Set</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Array Access: Offset Set</p>
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetSet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetUnset" id="_offsetUnset">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetUnset">#</a>
+		<code><a href="source-class-Slim.Environment.html#207-213" title="Go to source code">offsetUnset</a>( <span> <var>$offset</var></span> )</code>
+
+		<div class="description short">
+			<p>Array Access: Offset Unset</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Array Access: Offset Unset</p>
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetUnset()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getIterator" id="_getIterator">
+
+		<td class="attributes"><code>
+			 public 
+
+			ArrayIterator
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getIterator">#</a>
+		<code><a href="source-class-Slim.Environment.html#215-223" title="Go to source code">getIterator</a>( )</code>
+
+		<div class="description short">
+			<p>IteratorAggregate</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>IteratorAggregate</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					ArrayIterator
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>IteratorAggregate::getIterator()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="properties" id="$properties">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Slim.Environment.html#53-56" title="Go to source code"><var>$properties</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$properties" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="environment" id="$environment">
+		<td class="attributes"><code>
+			protected static 
+			<code><a href="class-Slim.Environment.html">Slim\Environment</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Slim.Environment.html#58-61" title="Go to source code"><var>$environment</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$environment" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

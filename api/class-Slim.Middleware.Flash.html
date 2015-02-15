@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Slim\Middleware\Flash</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Slim.html">
+						Slim<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Slim.Exception.html">
+						Exception					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Slim.Helper.html">
+						Helper					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Slim.Http.html">
+						Http					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Slim.Middleware.html">
+						Middleware					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Slim.Middleware.ContentTypes.html">ContentTypes</a></li>
+				<li class="active"><a href="class-Slim.Middleware.Flash.html">Flash</a></li>
+				<li><a href="class-Slim.Middleware.MethodOverride.html">MethodOverride</a></li>
+				<li><a href="class-Slim.Middleware.PrettyExceptions.html">PrettyExceptions</a></li>
+				<li><a href="class-Slim.Middleware.SessionCookie.html">SessionCookie</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Slim.Middleware.html" title="Summary of Slim\Middleware"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Flash</h1>
+
+
+	<div class="description">
+	<p>Flash</p>
+
+<p>This is middleware for a Slim application that enables
+Flash messaging between HTTP requests. This allows you
+set Flash messages for the current request, for the next request,
+or to retain messages from the previous request through to
+the next request.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-Slim.Middleware.html"><span>Slim\Middleware</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Slim\Middleware\Flash</span></b>			
+			 implements 
+<span>ArrayAccess</span>, 
+			
+<span>IteratorAggregate</span>, 
+			
+<span>Countable</span>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Slim.html">Slim</a>\<a href="namespace-Slim.Middleware.html">Middleware</a><br>
+		<b>Package:</b> Slim<br>
+
+				<b>Author:</b>
+				Josh Lockhart<br>
+				<b>Since:</b>
+				1.6.0<br>
+			<b>Located at</b> <a href="source-class-Slim.Middleware.Flash.html#35-212" title="Go to source code">vendor/Slim/Middleware/Flash.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#60-72" title="Go to source code">__construct</a>( <span>array <var>$settings</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			<p>Constructor</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Constructor</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$settings</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="call" id="_call">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_call">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#74-87" title="Go to source code">call</a>( )</code>
+
+		<div class="description short">
+			<p>Call</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Call</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="now" id="_now">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_now">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#89-100" title="Go to source code">now</a>( <span>string <var>$key</var></span>, <span>string <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Now</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Now</p>
+
+<p>Specify a flash message for a given key to be shown for the current request</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set" id="_set">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#102-113" title="Go to source code">set</a>( <span>string <var>$key</var></span>, <span>string <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Set</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set</p>
+
+<p>Specify a flash message for a given key to be shown for the next request</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="keep" id="_keep">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_keep">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#115-125" title="Go to source code">keep</a>( )</code>
+
+		<div class="description short">
+			<p>Keep</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Keep</p>
+
+<p>Retain flash messages from the previous request for the next request</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="save" id="_save">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_save">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#127-133" title="Go to source code">save</a>( )</code>
+
+		<div class="description short">
+			<p>Save</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Save</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadMessages" id="_loadMessages">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadMessages">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#135-143" title="Go to source code">loadMessages</a>( )</code>
+
+		<div class="description short">
+			<p>Load messages from previous request if available</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Load messages from previous request if available</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getMessages" id="_getMessages">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getMessages">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#145-153" title="Go to source code">getMessages</a>( )</code>
+
+		<div class="description short">
+			<p>Return array of flash messages to be shown for the current request</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return array of flash messages to be shown for the current request</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetExists" id="_offsetExists">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetExists">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#155-163" title="Go to source code">offsetExists</a>( <span> <var>$offset</var></span> )</code>
+
+		<div class="description short">
+			<p>Array Access: Offset Exists</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Array Access: Offset Exists</p>
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetExists()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetGet" id="_offsetGet">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetGet">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#165-173" title="Go to source code">offsetGet</a>( <span> <var>$offset</var></span> )</code>
+
+		<div class="description short">
+			<p>Array Access: Offset Get</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Array Access: Offset Get</p>
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetGet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetSet" id="_offsetSet">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetSet">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#175-181" title="Go to source code">offsetSet</a>( <span> <var>$offset</var></span>, <span> <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Array Access: Offset Set</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Array Access: Offset Set</p>
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetSet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetUnset" id="_offsetUnset">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetUnset">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#183-189" title="Go to source code">offsetUnset</a>( <span> <var>$offset</var></span> )</code>
+
+		<div class="description short">
+			<p>Array Access: Offset Unset</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Array Access: Offset Unset</p>
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetUnset()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getIterator" id="_getIterator">
+
+		<td class="attributes"><code>
+			 public 
+
+			ArrayIterator
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getIterator">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#191-200" title="Go to source code">getIterator</a>( )</code>
+
+		<div class="description short">
+			<p>Iterator Aggregate: Get Iterator</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Iterator Aggregate: Get Iterator</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					ArrayIterator
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>IteratorAggregate::getIterator()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="count" id="_count">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_count">#</a>
+		<code><a href="source-class-Slim.Middleware.Flash.html#202-208" title="Go to source code">count</a>( )</code>
+
+		<div class="description short">
+			<p>Countable: Count</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Countable: Count</p>
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>Countable::count()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Slim.Middleware.html#methods">Slim\Middleware</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Slim.Middleware.html#_getApplication">getApplication()</a>, 
+			<a href="class-Slim.Middleware.html#_getNextMiddleware">getNextMiddleware()</a>, 
+			<a href="class-Slim.Middleware.html#_setApplication">setApplication()</a>, 
+			<a href="class-Slim.Middleware.html#_setNextMiddleware">setNextMiddleware()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="settings" id="$settings">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Slim.Middleware.Flash.html#50-53" title="Go to source code"><var>$settings</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$settings" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="messages" id="$messages">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Slim.Middleware.Flash.html#55-58" title="Go to source code"><var>$messages</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$messages" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Slim.Middleware.html#properties">Slim\Middleware</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Slim.Middleware.html#$app"><var>$app</var></a>, 
+			<a href="class-Slim.Middleware.html#$next"><var>$next</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

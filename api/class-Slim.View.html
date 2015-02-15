@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Slim\View</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-Slim.html">
+						Slim<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Slim.Exception.html">
+						Exception					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Slim.Helper.html">
+						Helper					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Slim.Http.html">
+						Http					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Slim.Middleware.html">
+						Middleware					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Slim.Environment.html">Environment</a></li>
+				<li><a href="class-Slim.Log.html">Log</a></li>
+				<li><a href="class-Slim.LogWriter.html">LogWriter</a></li>
+				<li><a href="class-Slim.Middleware.html">Middleware</a></li>
+				<li><a href="class-Slim.Route.html">Route</a></li>
+				<li><a href="class-Slim.Router.html">Router</a></li>
+				<li><a href="class-Slim.Slim.html">Slim</a></li>
+				<li class="active"><a href="class-Slim.View.html">View</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Slim.html" title="Summary of Slim"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class View</h1>
+
+
+	<div class="description">
+	<p>View</p>
+
+<p>The view is responsible for rendering a template. The view
+should subclass \Slim\View and implement this interface:</p>
+
+<p>public render(string $template);</p>
+
+<p>This method should render the specified template and return
+the resultant string.</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Slim.html">Slim</a><br>
+		<b>Package:</b> Slim<br>
+
+				<b>Author:</b>
+				Josh Lockhart<br>
+				<b>Since:</b>
+				1.0.0<br>
+			<b>Located at</b> <a href="source-class-Slim.View.html#35-282" title="Go to source code">vendor/Slim/View.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Slim.View.html#64-70" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			<p>Constructor</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Constructor</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="has" id="_has">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_has">#</a>
+		<code><a href="source-class-Slim.View.html#76-84" title="Go to source code">has</a>( <span>string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			<p>Does view data have value with key?</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Does view data have value with key?</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get" id="_get">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-Slim.View.html#86-94" title="Go to source code">get</a>( <span>string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			<p>Return view data value with key</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return view data value with key</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set" id="_set">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set">#</a>
+		<code><a href="source-class-Slim.View.html#96-104" title="Go to source code">set</a>( <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Set view data value with key</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set view data value with key</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="keep" id="_keep">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_keep">#</a>
+		<code><a href="source-class-Slim.View.html#106-114" title="Go to source code">keep</a>( <span>string <var>$key</var></span>, <span>Slim\Closure <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Set view data value as Closure with key</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set view data value as Closure with key</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="all" id="_all">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_all">#</a>
+		<code><a href="source-class-Slim.View.html#116-123" title="Go to source code">all</a>( )</code>
+
+		<div class="description short">
+			<p>Return view data</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return view data</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="replace" id="_replace">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_replace">#</a>
+		<code><a href="source-class-Slim.View.html#125-132" title="Go to source code">replace</a>( <span>array <var>$data</var></span> )</code>
+
+		<div class="description short">
+			<p>Replace view data</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Replace view data</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="clear" id="_clear">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_clear">#</a>
+		<code><a href="source-class-Slim.View.html#134-140" title="Go to source code">clear</a>( )</code>
+
+		<div class="description short">
+			<p>Clear view data</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Clear view data</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getData" id="_getData">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getData">#</a>
+		<code><a href="source-class-Slim.View.html#146-158" title="Go to source code">getData</a>( <span> <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>DEPRECATION WARNING! This method will be removed in the next major point release</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>DEPRECATION WARNING! This method will be removed in the next major point release</p>
+
+<p>Get data from view</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setData" id="_setData">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setData">#</a>
+		<code><a href="source-class-Slim.View.html#160-180" title="Go to source code">setData</a>( )</code>
+
+		<div class="description short">
+			<p>DEPRECATION WARNING! This method will be removed in the next major point release</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>DEPRECATION WARNING! This method will be removed in the next major point release</p>
+
+<p>Set data for view</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="appendData" id="_appendData">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_appendData">#</a>
+		<code><a href="source-class-Slim.View.html#182-194" title="Go to source code">appendData</a>( <span>array <var>$data</var></span> )</code>
+
+		<div class="description short">
+			<p>DEPRECATION WARNING! This method will be removed in the next major point release</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>DEPRECATION WARNING! This method will be removed in the next major point release</p>
+
+<p>Append data to view</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setTemplatesDirectory" id="_setTemplatesDirectory">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setTemplatesDirectory">#</a>
+		<code><a href="source-class-Slim.View.html#200-208" title="Go to source code">setTemplatesDirectory</a>( <span>string <var>$directory</var></span> )</code>
+
+		<div class="description short">
+			<p>Set the base directory that contains view templates</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set the base directory that contains view templates</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$directory</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If directory is not a directory
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTemplatesDirectory" id="_getTemplatesDirectory">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTemplatesDirectory">#</a>
+		<code><a href="source-class-Slim.View.html#210-217" title="Go to source code">getTemplatesDirectory</a>( )</code>
+
+		<div class="description short">
+			<p>Get templates base directory</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get templates base directory</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTemplatePathname" id="_getTemplatePathname">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTemplatePathname">#</a>
+		<code><a href="source-class-Slim.View.html#219-227" title="Go to source code">getTemplatePathname</a>( <span>string <var>$file</var></span> )</code>
+
+		<div class="description short">
+			<p>Get fully qualified path to template file using templates base directory</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get fully qualified path to template file using templates base directory</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$file</var></dt>
+					<dd>The template file pathname relative to templates base directory</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="display" id="_display">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_display">#</a>
+		<code><a href="source-class-Slim.View.html#233-244" title="Go to source code">display</a>( <span>string <var>$template</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Display template</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Display template</p>
+
+<p>This method echoes the rendered template to the current output buffer</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$template</var></dt>
+					<dd>Pathname of template file relative to templates directory</dd>
+					<dt><var>$data</var></dt>
+					<dd>Any additonal data to be passed to the template.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="fetch" id="_fetch">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fetch">#</a>
+		<code><a href="source-class-Slim.View.html#246-256" title="Go to source code">fetch</a>( <span>string <var>$template</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Return the contents of a rendered template file</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return the contents of a rendered template file</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$template</var></dt>
+					<dd>The template pathname, relative to the template base directory</dd>
+					<dt><var>$data</var></dt>
+					<dd>Any additonal data to be passed to the template.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>The rendered template
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="render" id="_render">
+
+		<td class="attributes"><code>
+			 protected 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_render">#</a>
+		<code><a href="source-class-Slim.View.html#258-281" title="Go to source code">render</a>( <span>string <var>$template</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Render a template file</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Render a template file</p>
+
+<p>NOTE: This method should be overridden by custom view subclasses</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$template</var></dt>
+					<dd>The template pathname, relative to the template base directory</dd>
+					<dt><var>$data</var></dt>
+					<dd>Any additonal data to be passed to the template.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>The rendered template
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					RuntimeException<br>If resolved template pathname is not a valid file
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="data" id="$data">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Slim.Helper.Set.html">Slim\Helper\Set</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Slim.View.html#52-56" title="Go to source code"><var>$data</var></a>
+
+			<div class="description short">
+				<p>Data available to the view templates</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Data available to the view templates</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$data" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="templatesDirectory" id="$templatesDirectory">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Slim.View.html#58-62" title="Go to source code"><var>$templatesDirectory</var></a>
+
+			<div class="description short">
+				<p>Path to templates base directory (without trailing slash)</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Path to templates base directory (without trailing slash)</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$templatesDirectory" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
