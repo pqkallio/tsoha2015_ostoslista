@@ -346,7 +346,7 @@
 
 				<b>Author:</b>
 				kallionpetri<br>
-			<b>Located at</b> <a href="source-class-Product.html#3-259" title="Go to source code">app/models/product.php</a>
+			<b>Located at</b> <a href="source-class-Product.html#3-306" title="Go to source code">app/models/product.php</a>
 		<br>
 	</div>
 
@@ -369,11 +369,11 @@
 		<code><a href="source-class-Product.html#11-37" title="Go to source code">validate_name</a>( )</code>
 
 		<div class="description short">
-			<p>A function that validates the Product's <a href="Product::$name">Product::$name</a>.</p>
+			<p>A function that validates the Product's name.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>A function that validates the Product's <a href="Product::$name">Product::$name</a>.</p>
+			<p>A function that validates the Product's name.</p>
 
 
 
@@ -403,11 +403,11 @@
 		<code><a href="source-class-Product.html#39-58" title="Go to source code">validate_department</a>( )</code>
 
 		<div class="description short">
-			<p>A function that validates the Product's <a href="Product::$department">Product::$department</a>.</p>
+			<p>A function that validates the Product's department.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>A function that validates the Product's <a href="Product::$department">Product::$department</a>.</p>
+			<p>A function that validates the Product's department.</p>
 
 
 
@@ -437,11 +437,11 @@
 		<code><a href="source-class-Product.html#60-79" title="Go to source code">validate_unit</a>( )</code>
 
 		<div class="description short">
-			<p>A function that validates the Product's <a href="Product::$unit">Product::$unit</a>.</p>
+			<p>A function that validates the Product's unit.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>A function that validates the Product's <a href="Product::$unit">Product::$unit</a>.</p>
+			<p>A function that validates the Product's unit.</p>
 
 
 
@@ -471,11 +471,11 @@
 		<code><a href="source-class-Product.html#81-96" title="Go to source code">validate_owner</a>( )</code>
 
 		<div class="description short">
-			<p>A function that validates the Product's <a href="Product::$owner">Product::$owner</a>.</p>
+			<p>A function that validates the Product's owner.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>A function that validates the Product's <a href="Product::$owner">Product::$owner</a>.</p>
+			<p>A function that validates the Product's owner.</p>
 
 
 
@@ -646,24 +646,33 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find_by_owner">#</a>
-		<code><a href="source-class-Product.html#169-179" title="Go to source code">find_by_owner</a>( <span> <var>$user</var></span> )</code>
+		<code><a href="source-class-Product.html#168-184" title="Go to source code">find_by_owner</a>( <span>integer <var>$user_id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Queries the database for all rows from the table <em>Product</em> that have the user's id as owner, constructs objects out of them and returns them as an array.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Queries the database for all rows from the table <em>Product</em> that have the user's id as owner, constructs objects out of them and returns them as an array.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd>the user's id whose products are to be found</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of Product objects
+				</div>
 
 
 
@@ -676,24 +685,33 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find_owners_favorites">#</a>
-		<code><a href="source-class-Product.html#181-192" title="Go to source code">find_owners_favorites</a>( <span> <var>$params</var></span> )</code>
+		<code><a href="source-class-Product.html#186-203" title="Go to source code">find_owners_favorites</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Returns a user's favorite products.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Returns a user's favorite products.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of the user's favorite products
+				</div>
 
 
 
@@ -706,24 +724,33 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			integer
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Product.html#194-204" title="Go to source code">create</a>( <span> <var>$params</var></span> )</code>
+		<code><a href="source-class-Product.html#205-221" title="Go to source code">create</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Inserts a new row to the table <em>Product</em> based upon the params. Returns the id of the new row.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Inserts a new row to the table <em>Product</em> based upon the params. Returns the id of the new row.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					integer<br>the new products id
+				</div>
 
 
 
@@ -743,16 +770,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Product.html#206-214" title="Go to source code">update</a>( <span> <var>$id</var></span>, <span> <var>$attributes</var></span> )</code>
+		<code><a href="source-class-Product.html#223-237" title="Go to source code">update</a>( <span>integer <var>$id</var></span>, <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Updates the <em>Product</em> table's row corresponding to the id given as parameter with the values given in the $params array.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Updates the <em>Product</em> table's row corresponding to the id given as parameter with the values given in the $params array.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+					<dt><var>$params</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
@@ -773,46 +807,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-Product.html#216-218" title="Go to source code">delete</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-Product.html#239-246" title="Go to source code">delete</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Deletes the row of the table <em>Product</em> corresponding to the id given as parameter.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Deletes the row of the table <em>Product</em> corresponding to the id given as parameter.</p>
 
 
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="is_favorite" id="_is_favorite">
-
-		<td class="attributes"><code>
-			 public static
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_is_favorite">#</a>
-		<code><a href="source-class-Product.html#220-230" title="Go to source code">is_favorite</a>( <span> <var>$product_id</var></span>, <span> <var>$user_id</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
@@ -833,16 +842,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_fave">#</a>
-		<code><a href="source-class-Product.html#232-242" title="Go to source code">fave</a>( <span> <var>$product_id</var></span>, <span> <var>$user_id</var></span> )</code>
+		<code><a href="source-class-Product.html#267-283" title="Go to source code">fave</a>( <span>type <var>$product_id</var></span>, <span>type <var>$user_id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Either inserts or deletes a row of the table <em>Favorite_product</em> based on whether a row with $product_id and $user_id already exists or not.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Either inserts or deletes a row of the table <em>Favorite_product</em> based on whether a row with $product_id and $user_id already exists or not.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$product_id</var></dt>
+					<dd></dd>
+					<dt><var>$user_id</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
