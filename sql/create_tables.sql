@@ -19,7 +19,8 @@ CREATE TABLE Registered_user(
     available BOOLEAN DEFAULT FALSE,
     key VARCHAR(50) NOT NULL,
     role INTEGER REFERENCES Role(id) ON DELETE SET NULL,
-    account_status INTEGER REFERENCES Account_status(id) ON DELETE SET NULL
+    account_status INTEGER REFERENCES Account_status(id) ON DELETE SET NULL,
+    active_list INTEGER REFERENCES List(id) ON DELETE SET NULL
 );
 
 CREATE TABLE Role_history(
@@ -67,8 +68,7 @@ CREATE TABLE List(
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     owner INTEGER REFERENCES Registered_user(id) ON DELETE CASCADE,
-    shop INTEGER REFERENCES Shop(id) ON DELETE SET NULL,
-    active BOOLEAN NOT NULL DEFAULT TRUE
+    shop INTEGER REFERENCES Shop(id) ON DELETE SET NULL
 );
 
 CREATE TABLE Right_to_list(

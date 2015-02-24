@@ -15,18 +15,21 @@ class UnitController extends BaseController {
     }
     
     public static function show($id) {
+        self::check_logged_in();
         $unit = Unit::find($id);
         
         self::render_view('unit/show.html', array('unit' => $unit));
     }
     
     public static function edit($id) {
+        self::check_logged_in();
         $unit = Unit::find($id);
         
         self::render_view('unit/edit.html', array('attributes' => $unit));
     }
     
     public static function update($id) {
+        self::check_logged_in();
         $params = $_POST;
         
         $attributes = array(
@@ -42,10 +45,12 @@ class UnitController extends BaseController {
     }
     
     public static function create() {
+        self::check_logged_in();
         self::render_view('unit/new.html');
     }
     
     public static function store() {
+        self::check_logged_in();
         $params = $_POST;
         
         $attributes = array(

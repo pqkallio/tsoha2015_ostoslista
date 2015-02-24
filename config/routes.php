@@ -24,10 +24,6 @@
       UserController::logout();
   });
   
-  $app->get('/hiekkalaatikko', function() {
-    HelloWorldController::sandbox();
-  });
-  
   $app->get('/lists', function() {
       ShoppingListController::index();
   });
@@ -120,6 +116,10 @@
       ProductController::destroy($id);
   });
   
+  $app->get('/departments', function() {
+      DepartmentController::index();
+  });
+  
   $app->get('/department/:id', function($id) {
       DepartmentController::show($id);
   });
@@ -131,3 +131,24 @@
   $app->post('/department/:id/edit', function($id) {
       DepartmentController::update($id);
   });
+  
+  $app->post('/department/:id/delete', function($id) {
+      DepartmentController::destroy($id);
+  });
+  
+  $app->get('/list/:id/share', function($id) {
+      ShoppingListController::share($id);
+  });
+  
+  $app->post('/list/:id/share', function($id) {
+      ShoppingListController::share_list($id);
+  });
+  
+  $app->get('/signup', function() {
+      UserController::signup();
+  });
+  
+  $app->post('/signup', function() {
+      UserController::store();
+  });
+  

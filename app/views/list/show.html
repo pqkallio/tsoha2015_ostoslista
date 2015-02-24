@@ -23,7 +23,7 @@
         {% for i in 0..purchases|length-1 %}
         <tr>    
             <td>{{products[i].name}}</td>
-            <td colspan="2">{{purchases[i].amount}} {{units[i].abbreviation}}</td>
+            <td colspan="2">{{purchases[i].amount}} {% if units[i] %}{{units[i].abbreviation}}{% else %}kpl{% endif %}</td>
             {% if departments[i] %}
                 <td>{{departments[i].name}}</td>
             {% else %}
@@ -46,6 +46,7 @@
         </td>
         <td>
             <select name="unit" class="form-control">
+                <option value=""></option>
                 {% for unit in all_units %}
                 <option value="{{unit.id}}">{{unit.abbreviation}}</option>
                 {% endfor %}
@@ -53,6 +54,7 @@
         </td>
         <td>
             <select name="department" class="form-control">
+                <option value=""></option>
                 {% for department in all_departments %}
                 <option value="{{department.id}}">{{department.name}}</option>
                 {% endfor %}

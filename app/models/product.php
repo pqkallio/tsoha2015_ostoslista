@@ -23,6 +23,7 @@ class Product extends BaseModel {
         if (strlen($this->name) < 2 || strlen($this->name) > 50) {
             $errors[] = 'Nimen pituuden tulee olla vähintään 2 ja enintaan 50 merkkiä.';
         }
+        
         if (BaseController::get_user_logged_in()) {
             $previous_products = self::find_by_owner(BaseController::get_user_logged_in()->id);
 
@@ -44,12 +45,10 @@ class Product extends BaseModel {
     public function validate_department() {
         $errors = array();
         
-        if (!is_numeric($this->department)) {
-            $errors[] = 'Virheellinen osasto.';
-        }
-        
         if ($this->department != null) {
-            if (Department::find($this->department) == null) {
+            if (!is_numeric($this->department)) {
+                $errors[] = 'Virheellinen osasto.';
+            } else if (Department::find($this->department) == null) {
                 $errors[] = 'Osastoa ei löydy tietokannasta.';
             }
         }
@@ -65,12 +64,10 @@ class Product extends BaseModel {
     public function validate_unit() {
         $errors = array();
         
-        if (!is_numeric($this->unit)) {
-            $errors[] = 'Virheellinen yksikkö.';
-        }
-        
         if ($this->unit != null) {
-            if (Unit::find($this->unit) == null) {
+            if (!is_numeric($this->unit)) {
+                $errors[] = 'Virheellinen yksikkö.';
+            } else if (Unit::find($this->unit) == null) {
                 $errors[] = 'Yksikköä ei löydy tietokannasta.';
             }
         }
@@ -86,17 +83,15 @@ class Product extends BaseModel {
     public function validate_owner() {
         $errors = array();
         
-        if ($this->owner != null) {
-            if (User::find($this->owner) == null) {
-                $errors[] = 'Virheellinen omistaja.';
-            }
+        if ($this->owner == null || User::find($this->owner) == null) {
+            $errors[] = 'Virheellinen omistaja. Täällä ongelma!!!';
         }
         
         return $errors;
     }
     
     /**
-     * A constructor inherited from {@link BaseModel}
+     * A constructor inherited from {@link BaseModel}. Validates the object based on validation rules.
      * 
      * @param array $attributes attributes used to construct an object (default null)
      */
@@ -209,6 +204,14 @@ class Product extends BaseModel {
      * @return integer the new products id
      */
     public static function create($params) {
+        if ($params['unit'] == "") {
+            $params['unit'] = null;
+        }
+        
+        if ($params['department'] == "") {
+            $params['department'] = null;
+        }
+        
         $rows = DB::query('INSERT INTO Product (name, department, unit, owner) '
                 . 'VALUES (:name, :department, :unit, :owner) RETURNING id',
                 array('name' => strtolower(trim($params['name'])), 

@@ -48,4 +48,31 @@ class UserController extends BaseController {
         
         self::redirect_to('/login');
     }
+    
+    public static function signup() {
+        self::render_view('user/signup.html');
+    }
+    
+    public static function store() {
+        $params = $_POST;
+        
+        if ($params['password'] != $params['password_repeat']) {
+            self::render_view('user/signup.html', array('error' => 'Salasanat eivät täsmää!'));
+        }
+        
+        $attributes = array('first_name' => StringUtil::trim_name($params['first_name']),
+                            'last_name' => StringUtil::trim_name($params['last_name']),
+                            'user_name' => StringUtil::trim($params['user_name']),
+                            'email' => StringUtil::trim($params['email']),
+                            'password' => $params['password']);
+        
+        $user = new User($attributes);
+        
+        if (count($user->errors()) != 0) {
+            self::render_view('user/signup.html', array('errors' => $user->errors()));
+        } else {
+            $user_id = User::create($attributes);
+            self::redirect_to('/login', array('message' => 'Uusi käyttäjä luotu!'));
+        }
+    }
 }

@@ -25,7 +25,7 @@
     <div class="form-group">
         <label for="unit">Yksikkö</label>
         <select name="unit">
-            <option value="null"></option>
+            <option value=""></option>
             {% for unit in units %}
                 {% if unit.id == attributes.unit %}
                     <option value="{{unit.id}}" selected>{{unit.name_singular}}</option>
@@ -38,7 +38,7 @@
     <div class="form-group">
         <label for="department">Osasto</label>
         <select name="department">
-            <option value="null"></option>
+            <option value=""></option>
             {% for department in departments %}
                 {% if department.id == attributes.department %}
                     <option value="{{department.id}}" selected>{{department.name}}</option>

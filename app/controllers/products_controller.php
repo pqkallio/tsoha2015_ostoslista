@@ -18,8 +18,18 @@ class ProductController extends BaseController {
         $product_departments = array();
         
         foreach ($products as $product) {
-            array_push($product_units, Unit::find($product->unit));
-            array_push($product_departments, Department::find($product->department));
+            if ($product->unit != null) {
+                array_push($product_units, Unit::find($product->unit));
+            } else {
+                array_push($product_units, null);
+            }
+            
+            if ($product->department != null) {
+                array_push($product_departments, Department::find($product->department));
+            } else {
+                array_push($product_departments, null);
+            }
+                
         }
         
         self::render_view('product/index.html', array('products' => $products, 
@@ -147,8 +157,16 @@ class ProductController extends BaseController {
         $units = Unit::all();
         $departments = Department::all();
         
+        if ($params['unit'] == 'null') {
+            $params['unit'] = null;
+        }
+        
+        if ($params['department'] == 'null') {
+            $params['department'] = null;
+        }
+        
         $attributes = array(
-            'name' => strtolower(trim($params['name'])),
+            'name' => StringUtil::trim($params['name']),
             'department' => $params['department'],
             'unit' => $params['unit'],
             'owner' => parent::get_user_logged_in()->id

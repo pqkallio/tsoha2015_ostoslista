@@ -15,20 +15,24 @@ class PurchaseController extends BaseController {
         $product = Product::find_by_name($user->id, strtolower(trim($params['product_name'])));
         
         if (!$product) {
-            $product_id = self::create_product($params);
+            $return_value = self::create_product($params);
         } else {
-            $product_id = $product->id;
+            $return_value = $product->id;
         }
         
-        Purchase::create(array(
-            'list' => $params['list'],
-            'product' => $product_id,
-            'department' => $params['department'],
-            'unit' => $params['unit'],
-            'amount' => $params['amount']
-        ));
-        
-        self::redirect_to('/list/' . $params['list'], array('message' => 'kaikki muka ok...'));
+        if (is_array($return_value)) {
+            self::redirect_to('/list/' . $params['list'], array('errors' => $return_value));
+        } else {
+            Purchase::create(array(
+                'list' => $params['list'],
+                'product' => $return_value,
+                'department' => $params['department'],
+                'unit' => $params['unit'],
+                'amount' => $params['amount']
+            ));
+
+            self::redirect_to('/list/' . $params['list'], array('message' => 'Ostos lisätty!'));
+        }
     }
     
     public static function set_purchase_date($id) {
@@ -41,13 +45,28 @@ class PurchaseController extends BaseController {
     private static function create_product($attributes) {
         $params = array();
         
+        if ($attributes['unit'] == 'null') {
+            $attributes['unit'] = null;
+        }
+        
+        if ($attributes['department'] == 'null') {
+            $attributes['department'] = null;
+        }
+        
         $params['name'] = $attributes['product_name'];
-        $params['department'] = $attributes['department'];
-        $params['unit'] = $attributes['unit'];
-        $params['owner'] = self::get_user_logged_in()->id;
+            $params['department'] = $attributes['department'];
+            $params['unit'] = $attributes['unit'];
+            $params['owner'] = self::get_user_logged_in()->id;
+            
+        $product = new Product($params);
         
-        $product_id = Product::create($params);
-        
-        return $product_id;
+        if (count($product->errors()) == 0) {
+            $product_id = Product::create($params);
+
+            return $product_id;
+        } else {
+            return $product->errors();
+        }
     }
 }
+    

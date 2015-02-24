@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Käyttäjätilin rekisteröinti</h1>
+
+  {% if error %}
+    <div class="alert alert-danger">
+      <p>{{error}}</p>
+    </div>
+  {% endif %}
+  
+  <form method="post" action="{{base_path}}/signup">
+    <div class="form-group">
+      <label>Etunimi</label>
+      <input class="form-control" name="first_name" type="text">
+    </div>
+    <div class="form-group">
+      <label>Sukunimi</label>
+      <input class="form-control" name="last_name" type="text">
+    </div>
+    <div class="form-group">
+      <label>Käyttäjätunnus</label>
+      <input class="form-control" name="user_name" type="text">
+    </div>
+    <div class="form-group">
+      <label>Sähköpostiosoite</label>
+      <input class="form-control" name="email" type="text">
+    </div>
+    <div class="form-group">
+      <label>Salasana</label>
+      <input class="form-control" name="password" type="password">
+    </div>
+    <div class="form-group">
+      <label>Salasana uudestaan</label>
+      <input class="form-control" name="password_repeat" type="password">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Rekisteröidy!</button>
+  </form>
+{% endblock %}
