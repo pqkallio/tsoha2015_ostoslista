@@ -45,6 +45,12 @@ class ShoppingListController extends BaseController {
             $all_units = Unit::all();
             $all_departments = Department::all();
             
+            if ($active_list->owner != $user->id) {
+                $list_owner = User::find($active_list->owner);
+            } else {
+                $list_owner = User::find($user->id);
+            }
+            
             foreach ($purchases as $purchase) {
                 $products[] = Product::find($purchase->product);
                 
@@ -66,7 +72,7 @@ class ShoppingListController extends BaseController {
                 'purchases' => $purchases, 'products' => $products, 
                 'units' => $units, 'departments' => $departments,
                 'all_units' => $all_units, 'all_departments' => $all_departments,
-                'users' => $users));
+                'users' => $users, 'list_owner' => $list_owner));
         } else {
             self::redirect_to('/login');
         }
@@ -100,10 +106,14 @@ class ShoppingListController extends BaseController {
         self::check_logged_in();
         $user_id = self::get_user_logged_in()->id;
         
-        User::set_active_list_to_null($user_id);
-        ShoppingList::delete($id);
-        
-        self::redirect_to('/lists', array('message' => 'Lista poistettu!'));
+        if (ShoppingList::find($id)->owner == $user_id) {
+            User::set_active_list_to_null($user_id);
+            ShoppingList::delete($id);
+
+            self::redirect_to('/lists', array('message' => 'Lista poistettu!'));
+        } else {
+            self::redirect_to('/lists', array('error' => 'Et voi poistaa toisen käyttäjän listaa!'));
+        }
     }
     
     public static function share($list_id) {

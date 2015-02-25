@@ -64,6 +64,7 @@
 				<li><a href="class-DatabaseConfig.html">DatabaseConfig</a></li>
 				<li><a href="class-DB.html">DB</a></li>
 				<li><a href="class-Department.html">Department</a></li>
+				<li><a href="class-DepartmentController.html">DepartmentController</a></li>
 				<li><a href="class-MySqlTableLister.html">MySqlTableLister</a></li>
 				<li><a href="class-PgSqlTableLister.html">PgSqlTableLister</a></li>
 				<li><a href="class-Product.html">Product</a></li>
@@ -72,6 +73,7 @@
 				<li><a href="class-PurchaseController.html">PurchaseController</a></li>
 				<li><a href="class-ShoppingList.html">ShoppingList</a></li>
 				<li><a href="class-ShoppingListController.html">ShoppingListController</a></li>
+				<li><a href="class-StringUtil.html">StringUtil</a></li>
 				<li><a href="class-TableLister.html">TableLister</a></li>
 				<li><a href="class-Twig_Autoloader.html">Twig_Autoloader</a></li>
 				<li><a href="class-Twig_Compiler.html">Twig_Compiler</a></li>
@@ -346,7 +348,7 @@
 
 				<b>Author:</b>
 				Petri Kallio <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a><br>
-			<b>Located at</b> <a href="source-class-ProductController.html#3-228" title="Go to source code">app/controllers/products_controller.php</a>
+			<b>Located at</b> <a href="source-class-ProductController.html#3-246" title="Go to source code">app/controllers/products_controller.php</a>
 		<br>
 	</div>
 
@@ -366,7 +368,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_index">#</a>
-		<code><a href="source-class-ProductController.html#10-27" title="Go to source code">index</a>( )</code>
+		<code><a href="source-class-ProductController.html#10-37" title="Go to source code">index</a>( )</code>
 
 		<div class="description short">
 			<p>Prepare variables needed to render the user's <em>all products</em> view and render it.</p>
@@ -396,7 +398,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_favorites">#</a>
-		<code><a href="source-class-ProductController.html#29-46" title="Go to source code">favorites</a>( )</code>
+		<code><a href="source-class-ProductController.html#39-56" title="Go to source code">favorites</a>( )</code>
 
 		<div class="description short">
 			<p>Prepare variables needed to render the user's <em>favorite products</em> view and render it.</p>
@@ -426,7 +428,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_show">#</a>
-		<code><a href="source-class-ProductController.html#48-66" title="Go to source code">show</a>( <span>integer <var>$id</var></span> )</code>
+		<code><a href="source-class-ProductController.html#58-76" title="Go to source code">show</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Takes a <code><a href="class-Product.html">Product</a></code>'s id as a parameter, asks for the corresponding object from the model class and renders its <em>show</em> view.</p>
@@ -461,7 +463,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_edit">#</a>
-		<code><a href="source-class-ProductController.html#68-85" title="Go to source code">edit</a>( <span>integer <var>$id</var></span> )</code>
+		<code><a href="source-class-ProductController.html#78-95" title="Go to source code">edit</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Takes a <code><a href="class-Product.html">Product</a></code>'s id as a parameter, asks for the corresponding object from the model class and renders its <em>edit</em> view.</p>
@@ -496,7 +498,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_fave">#</a>
-		<code><a href="source-class-ProductController.html#87-101" title="Go to source code">fave</a>( <span>integer <var>$id</var></span> )</code>
+		<code><a href="source-class-ProductController.html#97-111" title="Go to source code">fave</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Takes a <code><a href="class-Product.html">Product</a></code>'s id as a parameter, asks the model class to add the corresponding product to the signed-in user's favorite products and redirects to the user's <em>all products</em> view.</p>
@@ -531,7 +533,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_destroy">#</a>
-		<code><a href="source-class-ProductController.html#103-119" title="Go to source code">destroy</a>( <span>integer <var>$id</var></span> )</code>
+		<code><a href="source-class-ProductController.html#113-129" title="Go to source code">destroy</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Takes a <code><a href="class-Product.html">Product</a></code>'s id as a parameter, asks the model class to delete the corresponding row from the database and redirects to the user's <em>all products</em> view.</p>
@@ -566,7 +568,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-ProductController.html#121-130" title="Go to source code">create</a>( )</code>
+		<code><a href="source-class-ProductController.html#131-140" title="Go to source code">create</a>( )</code>
 
 		<div class="description short">
 			<p>Prepares the variables needed to render the <em>create new product</em> view and renders it.</p>
@@ -596,7 +598,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_store">#</a>
-		<code><a href="source-class-ProductController.html#132-167" title="Go to source code">store</a>( )</code>
+		<code><a href="source-class-ProductController.html#142-185" title="Go to source code">store</a>( )</code>
 
 		<div class="description short">
 			<p>Asks for the <code><a href="class-Product.html">Product</a></code> model class to insert a new row to the database based on the parameters given with HTTP Post request and either</p>
@@ -641,7 +643,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-ProductController.html#169-206" title="Go to source code">update</a>( <span>integer <var>$id</var></span> )</code>
+		<code><a href="source-class-ProductController.html#187-224" title="Go to source code">update</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Asks for the <code><a href="class-Product.html">Product</a></code> model class to update the row in the database with the corresponding id based on the parameters given with HTTP Post request and either</p>

@@ -64,6 +64,7 @@
 				<li><a href="class-DatabaseConfig.html">DatabaseConfig</a></li>
 				<li><a href="class-DB.html">DB</a></li>
 				<li><a href="class-Department.html">Department</a></li>
+				<li><a href="class-DepartmentController.html">DepartmentController</a></li>
 				<li><a href="class-MySqlTableLister.html">MySqlTableLister</a></li>
 				<li><a href="class-PgSqlTableLister.html">PgSqlTableLister</a></li>
 				<li><a href="class-Product.html">Product</a></li>
@@ -72,6 +73,7 @@
 				<li><a href="class-PurchaseController.html">PurchaseController</a></li>
 				<li><a href="class-ShoppingList.html">ShoppingList</a></li>
 				<li><a href="class-ShoppingListController.html">ShoppingListController</a></li>
+				<li><a href="class-StringUtil.html">StringUtil</a></li>
 				<li><a href="class-TableLister.html">TableLister</a></li>
 				<li><a href="class-Twig_Autoloader.html">Twig_Autoloader</a></li>
 				<li><a href="class-Twig_Compiler.html">Twig_Compiler</a></li>
@@ -313,7 +315,7 @@
 
 
 	<div class="description">
-	<p>Description of Unit</p>
+	<p>An abstraction of a <code><a href="class-Product.html">Product</a></code>'s unit</p>
 	</div>
 
 	<dl class="tree">
@@ -346,7 +348,7 @@
 
 				<b>Author:</b>
 				kallionpetri<br>
-			<b>Located at</b> <a href="source-class-Unit.html#4-78" title="Go to source code">app/models/unit.php</a>
+			<b>Located at</b> <a href="source-class-Unit.html#4-198" title="Go to source code">app/models/unit.php</a>
 		<br>
 	</div>
 
@@ -354,6 +356,108 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="validate_name_singular" id="_validate_name_singular">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_name_singular">#</a>
+		<code><a href="source-class-Unit.html#12-37" title="Go to source code">validate_name_singular</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the Unit's singular name.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the Unit's singular name.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validate_name_plural" id="_validate_name_plural">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_name_plural">#</a>
+		<code><a href="source-class-Unit.html#39-64" title="Go to source code">validate_name_plural</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the Unit's plural name.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the Unit's plural name.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validate_abbreviation" id="_validate_abbreviation">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_abbreviation">#</a>
+		<code><a href="source-class-Unit.html#66-91" title="Go to source code">validate_abbreviation</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the Unit's abbreviation.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the Unit's abbreviation.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
@@ -366,16 +470,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Unit.html#12-14" title="Go to source code">__construct</a>( <span> <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Unit.html#93-103" title="Go to source code">__construct</a>( <span>array <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			
+			<p>A constructor inherited from <code><a href="class-BaseModel.html">BaseModel</a></code>. Validates the object based on validation rules.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>A constructor inherited from <code><a href="class-BaseModel.html">BaseModel</a></code>. Validates the object based on validation rules.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$attributes</var></dt>
+					<dd>attributes used to construct an object (default null)</dd>
+				</dl></div>
 
 
 
@@ -391,24 +500,28 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_all">#</a>
-		<code><a href="source-class-Unit.html#16-30" title="Go to source code">all</a>( )</code>
+		<code><a href="source-class-Unit.html#105-119" title="Go to source code">all</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Retrieves all rows from the table <em>Unit</em> and constructs Unit objects from them finally returning them as an array.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Retrieves all rows from the table <em>Unit</em> and constructs Unit objects from them finally returning them as an array.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of Unit objects
+				</div>
 
 
 
@@ -421,24 +534,33 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-Unit.html">Unit</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find">#</a>
-		<code><a href="source-class-Unit.html#32-47" title="Go to source code">find</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-Unit.html#121-141" title="Go to source code">find</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Finds a row from the table <em>Unit</em> with the id given as parameter, constructs a Unit object of it and finally returns it.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Finds a row from the table <em>Unit</em> with the id given as parameter, constructs a Unit object of it and finally returns it.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Unit.html">Unit</a></code><br>the Unit object corresponding to the id
+				</div>
 
 
 
@@ -458,16 +580,23 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Unit.html#49-59" title="Go to source code">update</a>( <span> <var>$id</var></span>, <span> <var>$attributes</var></span> )</code>
+		<code><a href="source-class-Unit.html#143-159" title="Go to source code">update</a>( <span>integer <var>$id</var></span>, <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Updates the <em>Unit</em> table's row corresponding to the id given as parameter with the values given in the $params array.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Updates the <em>Unit</em> table's row corresponding to the id given as parameter with the values given in the $params array.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+					<dt><var>$params</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
@@ -481,24 +610,33 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			integer
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Unit.html#61-77" title="Go to source code">create</a>( <span> <var>$attributes</var></span> )</code>
+		<code><a href="source-class-Unit.html#161-183" title="Go to source code">create</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Inserts a new row to the table <em>Unit</em> based upon the params. Returns the id of the new row.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Inserts a new row to the table <em>Unit</em> based upon the params. Returns the id of the new row.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					integer<br>the new unit's id
+				</div>
 
 
 

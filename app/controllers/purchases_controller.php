@@ -68,5 +68,11 @@ class PurchaseController extends BaseController {
             return $product->errors();
         }
     }
+    
+    public static function destroy($id) {
+        Purchase::delete($id);
+        
+        self::redirect_to('/lists');
+    }
 }
     

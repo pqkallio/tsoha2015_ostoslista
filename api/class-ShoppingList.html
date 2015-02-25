@@ -64,6 +64,7 @@
 				<li><a href="class-DatabaseConfig.html">DatabaseConfig</a></li>
 				<li><a href="class-DB.html">DB</a></li>
 				<li><a href="class-Department.html">Department</a></li>
+				<li><a href="class-DepartmentController.html">DepartmentController</a></li>
 				<li><a href="class-MySqlTableLister.html">MySqlTableLister</a></li>
 				<li><a href="class-PgSqlTableLister.html">PgSqlTableLister</a></li>
 				<li><a href="class-Product.html">Product</a></li>
@@ -72,6 +73,7 @@
 				<li><a href="class-PurchaseController.html">PurchaseController</a></li>
 				<li class="active"><a href="class-ShoppingList.html">ShoppingList</a></li>
 				<li><a href="class-ShoppingListController.html">ShoppingListController</a></li>
+				<li><a href="class-StringUtil.html">StringUtil</a></li>
 				<li><a href="class-TableLister.html">TableLister</a></li>
 				<li><a href="class-Twig_Autoloader.html">Twig_Autoloader</a></li>
 				<li><a href="class-Twig_Compiler.html">Twig_Compiler</a></li>
@@ -313,7 +315,7 @@
 
 
 	<div class="description">
-	<p>Description of list</p>
+	<p>An abstraction of a shopping list.</p>
 	</div>
 
 	<dl class="tree">
@@ -345,8 +347,8 @@
 		
 
 				<b>Author:</b>
-				kallionpetri<br>
-			<b>Located at</b> <a href="source-class-ShoppingList.html#3-129" title="Go to source code">app/models/shopping_list.php</a>
+				Petri Kallio <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a><br>
+			<b>Located at</b> <a href="source-class-ShoppingList.html#3-231" title="Go to source code">app/models/shopping_list.php</a>
 		<br>
 	</div>
 
@@ -354,6 +356,74 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="validate_name" id="_validate_name">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_name">#</a>
+		<code><a href="source-class-ShoppingList.html#11-38" title="Go to source code">validate_name</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the ShoppingList's name.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the ShoppingList's name.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validate_owner" id="_validate_owner">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_owner">#</a>
+		<code><a href="source-class-ShoppingList.html#40-59" title="Go to source code">validate_owner</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the Shopping List's owning <code><a href="class-User.html">User</a></code>.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the Shopping List's owning <code><a href="class-User.html">User</a></code>.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
@@ -366,16 +436,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-ShoppingList.html#11-13" title="Go to source code">__construct</a>( <span> <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-ShoppingList.html#61-70" title="Go to source code">__construct</a>( <span>array <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			
+			<p>A constructor inherited from <code><a href="class-BaseModel.html">BaseModel</a></code>. Validates the object based on validation rules.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>A constructor inherited from <code><a href="class-BaseModel.html">BaseModel</a></code>. Validates the object based on validation rules.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$attributes</var></dt>
+					<dd>attributes used to construct an object (default null)</dd>
+				</dl></div>
 
 
 
@@ -391,24 +466,28 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_all">#</a>
-		<code><a href="source-class-ShoppingList.html#15-30" title="Go to source code">all</a>( )</code>
+		<code><a href="source-class-ShoppingList.html#72-86" title="Go to source code">all</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Retrieves all rows from the table <em>List</em> and constructs ShoppingList objects from them finally returning them as an array.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Retrieves all rows from the table <em>List</em> and constructs ShoppingList objects from them finally returning them as an array.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of ShoppingList objects
+				</div>
 
 
 
@@ -421,24 +500,33 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-ShoppingList.html">ShoppingList</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find">#</a>
-		<code><a href="source-class-ShoppingList.html#32-49" title="Go to source code">find</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-ShoppingList.html#88-111" title="Go to source code">find</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Finds a row from the table <em>List</em> with the id given as parameter, constructs a ShoppingList object of it and finally returns it.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Finds a row from the table <em>List</em> with the id given as parameter, constructs a ShoppingList object of it and finally returns it.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-ShoppingList.html">ShoppingList</a></code><br>the ShoppingList object corresponding to the id
+				</div>
 
 
 
@@ -451,24 +539,33 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find_by_owner">#</a>
-		<code><a href="source-class-ShoppingList.html#51-66" title="Go to source code">find_by_owner</a>( <span> <var>$user</var></span> )</code>
+		<code><a href="source-class-ShoppingList.html#113-128" title="Go to source code">find_by_owner</a>( <span>integer <var>$user_id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Queries the database for all rows from the table <em>List</em> that have the user's id as owner, constructs objects out of them and returns them as an array.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Queries the database for all rows from the table <em>List</em> that have the user's id as owner, constructs objects out of them and returns them as an array.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd>the user's id whose lists are to be found</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of ShoppingList objects
+				</div>
 
 
 
@@ -476,29 +573,77 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="get_ids_and_names" id="_get_ids_and_names">
+	<tr data-order="find_by_user" id="_find_by_user">
 
 		<td class="attributes"><code>
 			 public static
 
-			
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_get_ids_and_names">#</a>
-		<code><a href="source-class-ShoppingList.html#68-83" title="Go to source code">get_ids_and_names</a>( <span> <var>$user_id</var></span> )</code>
+		<a class="anchor" href="#_find_by_user">#</a>
+		<code><a href="source-class-ShoppingList.html#130-140" title="Go to source code">find_by_user</a>( <span>integer <var>$user_id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Queries the database for all rows from the table <em>List</em> that the user owns or has right to, constructs objects out of them and returns them as an array.</p>
 		</div>
 
 		<div class="description detailed hidden">
+			<p>Queries the database for all rows from the table <em>List</em> that the user owns or has right to, constructs objects out of them and returns them as an array.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of ShoppingList objects
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="find_by_right_to_list" id="_find_by_right_to_list">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
 			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_find_by_right_to_list">#</a>
+		<code><a href="source-class-ShoppingList.html#142-158" title="Go to source code">find_by_right_to_list</a>( <span>integer <var>$user_id</var></span> )</code>
+
+		<div class="description short">
+			<p>Queries the database for all rows from the table <em>List</em> that the user has a right to, constructs objects out of them and returns them as an array.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Queries the database for all rows from the table <em>List</em> that the user has a right to, constructs objects out of them and returns them as an array.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of ShoppingList objects
+				</div>
 
 
 
@@ -511,24 +656,33 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			integer
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-ShoppingList.html#85-95" title="Go to source code">create</a>( <span> <var>$params</var></span> )</code>
+		<code><a href="source-class-ShoppingList.html#160-175" title="Go to source code">create</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Inserts a new row to the table <em>List</em> based upon the params. Returns the id of the new row.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Inserts a new row to the table <em>List</em> based upon the params. Returns the id of the new row.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					integer<br>the new ShoppingList's id
+				</div>
 
 
 
@@ -548,16 +702,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-ShoppingList.html#97-99" title="Go to source code">delete</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-ShoppingList.html#177-184" title="Go to source code">delete</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Deletes the row of the table <em>List</em> corresponding to the id given as parameter.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Deletes the row of the table <em>List</em> corresponding to the id given as parameter.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
@@ -566,7 +725,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="remove_users_active_list" id="_remove_users_active_list">
+	<tr data-order="share_list" id="_share_list">
 
 		<td class="attributes"><code>
 			 public static
@@ -577,17 +736,24 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_remove_users_active_list">#</a>
-		<code><a href="source-class-ShoppingList.html#101-105" title="Go to source code">remove_users_active_list</a>( <span> <var>$user_id</var></span> )</code>
+		<a class="anchor" href="#_share_list">#</a>
+		<code><a href="source-class-ShoppingList.html#186-198" title="Go to source code">share_list</a>( <span>integer <var>$list_id</var></span>, <span>integer <var>$user_id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Inserts a row to the <em>Right_to_list</em> table with the list's and the user's ids.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Inserts a row to the <em>Right_to_list</em> table with the list's and the user's ids.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$list_id</var></dt>
+					<dd></dd>
+					<dt><var>$user_id</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
@@ -596,59 +762,40 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="set_as_active_list" id="_set_as_active_list">
+	<tr data-order="has_right_to_list" id="_has_right_to_list">
 
 		<td class="attributes"><code>
 			 public static
 
-			
+			boolean
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_set_as_active_list">#</a>
-		<code><a href="source-class-ShoppingList.html#107-113" title="Go to source code">set_as_active_list</a>( <span> <var>$id</var></span>, <span> <var>$user_id</var></span> )</code>
+		<a class="anchor" href="#_has_right_to_list">#</a>
+		<code><a href="source-class-ShoppingList.html#200-216" title="Go to source code">has_right_to_list</a>( <span>integer <var>$user_id</var></span>, <span>integer <var>$list_id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Checks if the user given as $user_id has right to the list given as $list_id</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Checks if the user given as $user_id has right to the list given as $list_id</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd></dd>
+					<dt><var>$list_id</var></dt>
+					<dd></dd>
+				</dl></div>
 
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="get_active_list" id="_get_active_list">
-
-		<td class="attributes"><code>
-			 public static
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_get_active_list">#</a>
-		<code><a href="source-class-ShoppingList.html#115-128" title="Go to source code">get_active_list</a>( <span> <var>$user_id</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>true if user has the right, false otherwise
+				</div>
 
 
 
@@ -750,56 +897,6 @@
 		<td class="value">
 			<div>
 				<a href="#$owner" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="shop" id="$shop">
-		<td class="attributes"><code>
-			public  
-			
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-ShoppingList.html#9" title="Go to source code"><var>$shop</var></a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$shop" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="active" id="$active">
-		<td class="attributes"><code>
-			public  
-			
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-ShoppingList.html#9" title="Go to source code"><var>$active</var></a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$active" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>

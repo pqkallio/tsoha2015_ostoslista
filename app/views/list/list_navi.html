@@ -42,16 +42,20 @@
     <div>
         <form class="form-horizontal" method="get" action="{{base_path}}/list/{{active_list.id}}/share">
             <div>
-                <input type="submit" value="Jaa lista" class="btn btn-primary">
+                <input type="submit" value="Jaa lista" class="btn btn-primary" style="margin: 5px">
             </div>
         </form>
     </div>
-    {% endif %}
-    <div style="text-align: center;vertical-align: middle;">
-        <form action="{{base_path}}/list/{{active_list.id}}/delete" method="post" onclick="return confirm('Lista {{active_list.name}} poistetaan pysyvästi!')">
-            <button type="submit" value="Submit" class="btn btn-danger">Poista lista</button>
+    <div>
+        <form class="form-horizontal" action="{{base_path}}/list/{{active_list.id}}/delete" method="post" onclick="return confirm('Lista {{active_list.name}} poistetaan pysyvästi!')">
+            <div>
+                <input type="submit" value="Poista lista" class="btn btn-danger" style="margin: 5px">
+            </div>
         </form>
     </div>
+    {% else %}
+    <p>Käyttäjän <a href="{{base_path}}/user/{{active_list.owner}}">{{list_owner.user_name}}</a> lista.</p>
+    {% endif %}
     {% endif %}
     {% block list %} {% endblock %}
     {% if active_list %}

@@ -12,6 +12,7 @@
 <table class="table table-responsive table-striped table-hover">
     <thead>
         <tr>
+            <th>Poista</th>
             <th>Tuote</th>
             <th colspan="2">Määrä</th>
             <th>Osasto</th>
@@ -21,7 +22,10 @@
     {% if purchases %}
     <tbody>
         {% for i in 0..purchases|length-1 %}
-        <tr>    
+        <tr>
+            <td>
+                <input type="submit" form="delete_purchase_{{purchases[i].id}}" value="×" class="btn btn-danger" style="border-radius: 100%;">
+            </td>
             <td>{{products[i].name}}</td>
             <td colspan="2">{{purchases[i].amount}} {% if units[i] %}{{units[i].abbreviation}}{% else %}kpl{% endif %}</td>
             {% if departments[i] %}
@@ -37,6 +41,9 @@
 </table>
 {% if active_list %}
 </form>
+{% for purchase in purchases %}
+<form id="delete_purchase_{{purchase.id}}" action="{{base_path}}/purchases/{{purchase.id}}/delete" method="post"></form>
+{% endfor %}
 <form action="{{base_path}}/purchases" method="post" class="form-inline">
 <table class="table table-responsive table-striped table-hover">
     <tr>    
@@ -48,7 +55,13 @@
             <select name="unit" class="form-control">
                 <option value=""></option>
                 {% for unit in all_units %}
-                <option value="{{unit.id}}">{{unit.abbreviation}}</option>
+                <option value="{{unit.id}}">
+                    {% if unit.abbreviation != null %}
+                        {{unit.abbreviation}}
+                    {% else %}
+                        {{unit.name_singular}}
+                    {% endif %}
+                </option>
                 {% endfor %}
             </select>
         </td>
@@ -62,7 +75,6 @@
             <input name="list" type="hidden" value="{{active_list.id}}"/>
         </td>
         <td><input type="submit" value="Lisää!"/></td>
-
     </tr>
 </table>
 </form>

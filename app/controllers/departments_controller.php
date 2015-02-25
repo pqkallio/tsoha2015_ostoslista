@@ -20,6 +20,31 @@ class DepartmentController extends BaseController {
         
         self::render_view('department/show.html', array('department' => $department));
     }
+        
+    public static function create() {
+        self::render_view('department/new.html');
+    }
+
+    public static function store() {
+        self::check_logged_in();
+        
+        $params = $_POST;
+        
+        if (is_null($params['abbreviation']) || $params['abbreviation'] == '') {
+            $params['abbreviation'] = null;
+        }
+        
+        $department = new Department($params);
+        
+        if (count($department->errors()) != 0) {
+            self::render_view('/department/new.html', array('attributes' => $params, 
+                'errors' => $department->errors()));
+        } else {
+            Department::create($params);
+            
+            self::redirect_to('/departments', array('message' => 'Osasto lisätty!'));
+        }
+    }
     
     public static function edit($id) {
         self::check_logged_in();

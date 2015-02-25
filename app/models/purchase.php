@@ -30,7 +30,7 @@ class Purchase extends BaseModel {
     }
     
     /**
-     * A function that validates the Purchase's department.
+     * A function that validates the Purchase's product.
      * 
      * @return array an array of error messages as strings
      */
@@ -94,7 +94,7 @@ class Purchase extends BaseModel {
     }
     
     /**
-     * A function that validates the Purchase's department.
+     * A function that validates the Purchase's amount.
      * 
      * @return array an array of error messages as strings
      */

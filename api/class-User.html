@@ -64,6 +64,7 @@
 				<li><a href="class-DatabaseConfig.html">DatabaseConfig</a></li>
 				<li><a href="class-DB.html">DB</a></li>
 				<li><a href="class-Department.html">Department</a></li>
+				<li><a href="class-DepartmentController.html">DepartmentController</a></li>
 				<li><a href="class-MySqlTableLister.html">MySqlTableLister</a></li>
 				<li><a href="class-PgSqlTableLister.html">PgSqlTableLister</a></li>
 				<li><a href="class-Product.html">Product</a></li>
@@ -72,6 +73,7 @@
 				<li><a href="class-PurchaseController.html">PurchaseController</a></li>
 				<li><a href="class-ShoppingList.html">ShoppingList</a></li>
 				<li><a href="class-ShoppingListController.html">ShoppingListController</a></li>
+				<li><a href="class-StringUtil.html">StringUtil</a></li>
 				<li><a href="class-TableLister.html">TableLister</a></li>
 				<li><a href="class-Twig_Autoloader.html">Twig_Autoloader</a></li>
 				<li><a href="class-Twig_Compiler.html">Twig_Compiler</a></li>
@@ -313,7 +315,7 @@
 
 
 	<div class="description">
-	<p>Description of user</p>
+	<p>An abstraction of the application's user</p>
 	</div>
 
 	<dl class="tree">
@@ -345,8 +347,8 @@
 		
 
 				<b>Author:</b>
-				kallionpetri<br>
-			<b>Located at</b> <a href="source-class-User.html#3-84" title="Go to source code">app/models/user.php</a>
+				Petri Kallio <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a><br>
+			<b>Located at</b> <a href="source-class-User.html#3-287" title="Go to source code">app/models/user.php</a>
 		<br>
 	</div>
 
@@ -354,6 +356,176 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="validate_first_name" id="_validate_first_name">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_first_name">#</a>
+		<code><a href="source-class-User.html#12-33" title="Go to source code">validate_first_name</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the User's first name.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the User's first name.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validate_last_name" id="_validate_last_name">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_last_name">#</a>
+		<code><a href="source-class-User.html#35-56" title="Go to source code">validate_last_name</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the User's last name.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the User's last name.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validate_user_name" id="_validate_user_name">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_user_name">#</a>
+		<code><a href="source-class-User.html#58-81" title="Go to source code">validate_user_name</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the User's username.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the User's username.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validate_email" id="_validate_email">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_email">#</a>
+		<code><a href="source-class-User.html#83-102" title="Go to source code">validate_email</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the User's email.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the User's email.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validate_key" id="_validate_key">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_key">#</a>
+		<code><a href="source-class-User.html#104-125" title="Go to source code">validate_key</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the User's password.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the User's password.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
@@ -366,16 +538,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-User.html#12-14" title="Go to source code">__construct</a>( <span> <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-User.html#127-137" title="Go to source code">__construct</a>( <span>array <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			
+			<p>A constructor inherited from <code><a href="class-BaseModel.html">BaseModel</a></code>. Validates the object based on validation rules.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>A constructor inherited from <code><a href="class-BaseModel.html">BaseModel</a></code>. Validates the object based on validation rules.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$attributes</var></dt>
+					<dd>attributes used to construct an object (default null)</dd>
+				</dl></div>
 
 
 
@@ -391,24 +568,28 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_all">#</a>
-		<code><a href="source-class-User.html#16-31" title="Go to source code">all</a>( )</code>
+		<code><a href="source-class-User.html#139-153" title="Go to source code">all</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Retrieves all rows from the table <em>Registered_user</em> and constructs User objects from them finally returning them as an array.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Retrieves all rows from the table <em>Registered_user</em> and constructs User objects from them finally returning them as an array.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of User objects
+				</div>
 
 
 
@@ -421,24 +602,33 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-User.html">User</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find">#</a>
-		<code><a href="source-class-User.html#33-50" title="Go to source code">find</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-User.html#155-172" title="Go to source code">find</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Finds a row from the table <em>Registered_user</em> with the id given as parameter, constructs a User object of it and finally returns it.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Finds a row from the table <em>Registered_user</em> with the id given as parameter, constructs a User object of it and finally returns it.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-User.html">User</a></code><br>the User object corresponding to the id
+				</div>
 
 
 
@@ -451,24 +641,72 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-User.html">User</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find_by_username">#</a>
-		<code><a href="source-class-User.html#52-71" title="Go to source code">find_by_username</a>( <span> <var>$username</var></span> )</code>
+		<code><a href="source-class-User.html#174-193" title="Go to source code">find_by_username</a>( <span>string <var>$username</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Queries the database for a row corresponding to a user's username, constructs an object and finally returns it.</p>
 		</div>
 
 		<div class="description detailed hidden">
+			<p>Queries the database for a row corresponding to a user's username, constructs an object and finally returns it.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-User.html">User</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="create" id="_create">
+
+		<td class="attributes"><code>
+			 public static
+
+			integer
 			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_create">#</a>
+		<code><a href="source-class-User.html#195-212" title="Go to source code">create</a>( <span>array <var>$params</var></span> )</code>
+
+		<div class="description short">
+			<p>Inserts a new row to the table <em>Registered_user</em> based upon the params. Returns the id of the new row.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Inserts a new row to the table <em>Registered_user</em> based upon the params. Returns the id of the new row.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					integer<br>the new user's id
+				</div>
 
 
 
@@ -481,23 +719,145 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-User.html">User</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_authenticate">#</a>
-		<code><a href="source-class-User.html#73-83" title="Go to source code">authenticate</a>( <span> <var>$username</var></span>, <span> <var>$password</var></span> )</code>
+		<code><a href="source-class-User.html#214-231" title="Go to source code">authenticate</a>( <span>string <var>$username</var></span>, <span>string <var>$password</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Authenticates the user comparing the given username and password to the ones stored in the database. Returns the user if the authentication was successful and null otherwise.</p>
 		</div>
 
 		<div class="description detailed hidden">
+			<p>Authenticates the user comparing the given username and password to the ones stored in the database. Returns the user if the authentication was successful and null otherwise.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd></dd>
+					<dt><var>$password</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-User.html">User</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_active_list" id="_set_active_list">
+
+		<td class="attributes"><code>
+			 public static
+
 			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_active_list">#</a>
+		<code><a href="source-class-User.html#233-244" title="Go to source code">set_active_list</a>( <span>integer <var>$user_id</var></span>, <span>integer <var>$list_id</var></span> )</code>
+
+		<div class="description short">
+			<p>Sets the list_id given as parameter as the user's active list.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sets the list_id given as parameter as the user's active list.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd>the User whose active_list is to be updated</dd>
+					<dt><var>$list_id</var></dt>
+					<dd>the ShoppingList's id to be set as active list</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_active_list" id="_get_active_list">
+
+		<td class="attributes"><code>
+			 public static
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_active_list">#</a>
+		<code><a href="source-class-User.html#246-256" title="Go to source code">get_active_list</a>( <span>integer <var>$user_id</var></span> )</code>
+
+		<div class="description short">
+			<p>Returns the id of the user's active list.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the id of the user's active list.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer<br>the id of the user's active list
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_active_list_to_null" id="_set_active_list_to_null">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_active_list_to_null">#</a>
+		<code><a href="source-class-User.html#258-268" title="Go to source code">set_active_list_to_null</a>( <span>integer <var>$user_id</var></span> )</code>
+
+		<div class="description short">
+			<p>Sets the user's active list to null</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sets the user's active list to null</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
@@ -800,6 +1160,31 @@
 		<td class="value">
 			<div>
 				<a href="#$account_status" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="active_list" id="$active_list">
+		<td class="attributes"><code>
+			public  
+			
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-User.html#10" title="Go to source code"><var>$active_list</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$active_list" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>

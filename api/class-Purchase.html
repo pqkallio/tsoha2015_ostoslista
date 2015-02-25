@@ -64,6 +64,7 @@
 				<li><a href="class-DatabaseConfig.html">DatabaseConfig</a></li>
 				<li><a href="class-DB.html">DB</a></li>
 				<li><a href="class-Department.html">Department</a></li>
+				<li><a href="class-DepartmentController.html">DepartmentController</a></li>
 				<li><a href="class-MySqlTableLister.html">MySqlTableLister</a></li>
 				<li><a href="class-PgSqlTableLister.html">PgSqlTableLister</a></li>
 				<li><a href="class-Product.html">Product</a></li>
@@ -72,6 +73,7 @@
 				<li><a href="class-PurchaseController.html">PurchaseController</a></li>
 				<li><a href="class-ShoppingList.html">ShoppingList</a></li>
 				<li><a href="class-ShoppingListController.html">ShoppingListController</a></li>
+				<li><a href="class-StringUtil.html">StringUtil</a></li>
 				<li><a href="class-TableLister.html">TableLister</a></li>
 				<li><a href="class-Twig_Autoloader.html">Twig_Autoloader</a></li>
 				<li><a href="class-Twig_Compiler.html">Twig_Compiler</a></li>
@@ -313,7 +315,7 @@
 
 
 	<div class="description">
-	<p>Description of purchas</p>
+	<p>An abstraction of a single <em>Purchase</em> object.</p>
 	</div>
 
 	<dl class="tree">
@@ -345,8 +347,8 @@
 		
 
 				<b>Author:</b>
-				kallionpetri<br>
-			<b>Located at</b> <a href="source-class-Purchase.html#3-99" title="Go to source code">app/models/purchase.php</a>
+				Petri Kallio <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a><br>
+			<b>Located at</b> <a href="source-class-Purchase.html#3-244" title="Go to source code">app/models/purchase.php</a>
 		<br>
 	</div>
 
@@ -354,6 +356,176 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="validate_shopping_list" id="_validate_shopping_list">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_shopping_list">#</a>
+		<code><a href="source-class-Purchase.html#12-30" title="Go to source code">validate_shopping_list</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the Purchase's shopping list.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the Purchase's shopping list.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validate_product" id="_validate_product">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_product">#</a>
+		<code><a href="source-class-Purchase.html#32-58" title="Go to source code">validate_product</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the Purchase's product.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the Purchase's product.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validate_department" id="_validate_department">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_department">#</a>
+		<code><a href="source-class-Purchase.html#60-76" title="Go to source code">validate_department</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the Purchase's department.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the Purchase's department.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validate_unit" id="_validate_unit">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_unit">#</a>
+		<code><a href="source-class-Purchase.html#78-94" title="Go to source code">validate_unit</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the Purchase's unit.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the Purchase's unit.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validate_amount" id="_validate_amount">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_amount">#</a>
+		<code><a href="source-class-Purchase.html#96-110" title="Go to source code">validate_amount</a>( )</code>
+
+		<div class="description short">
+			<p>A function that validates the Purchase's amount.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that validates the Purchase's amount.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages as strings
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
@@ -366,16 +538,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Purchase.html#11-13" title="Go to source code">__construct</a>( <span> <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Purchase.html#112-122" title="Go to source code">__construct</a>( <span>array <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			
+			<p>A construction method inherited from <code><a href="class-BaseModel.html">BaseModel</a></code>. Validates the object based on validation rules.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>A construction method inherited from <code><a href="class-BaseModel.html">BaseModel</a></code>. Validates the object based on validation rules.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$attributes</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
@@ -391,24 +568,28 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_all">#</a>
-		<code><a href="source-class-Purchase.html#15-32" title="Go to source code">all</a>( )</code>
+		<code><a href="source-class-Purchase.html#124-138" title="Go to source code">all</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Retrieves all rows from the table <em>Purchase</em> and constructs Purchase objects from them finally returning them as an array.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Retrieves all rows from the table <em>Purchase</em> and constructs Purchase objects from them finally returning them as an array.</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of Purchase objects
+				</div>
 
 
 
@@ -421,24 +602,33 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			<code><a href="class-Purchase.html">Purchase</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find">#</a>
-		<code><a href="source-class-Purchase.html#34-51" title="Go to source code">find</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-Purchase.html#140-155" title="Go to source code">find</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Finds one row from the Table <em>Purchase</em> based on the id given as parameter, constructs a new Purchase object based on it, finally returning the created object.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Finds one row from the Table <em>Purchase</em> based on the id given as parameter, constructs a new Purchase object based on it, finally returning the created object.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Purchase.html">Purchase</a></code>
+				</div>
 
 
 
@@ -451,24 +641,33 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find_by_list">#</a>
-		<code><a href="source-class-Purchase.html#53-72" title="Go to source code">find_by_list</a>( <span> <var>$shopping_list</var></span> )</code>
+		<code><a href="source-class-Purchase.html#157-175" title="Go to source code">find_by_list</a>( <span>integer <var>$shopping_list</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Queries the database for all rows from the table <em>Purchase</em> that have the <code><a href="class-ShoppingList.html">ShoppingList</a></code>'s id as $shopping_list, constructs objects out of them and returns them as an array.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Queries the database for all rows from the table <em>Purchase</em> that have the <code><a href="class-ShoppingList.html">ShoppingList</a></code>'s id as $shopping_list, constructs objects out of them and returns them as an array.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$shopping_list</var></dt>
+					<dd>the shopping list's id which purchases are to be found</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of Purchase objects
+				</div>
 
 
 
@@ -481,24 +680,33 @@
 		<td class="attributes"><code>
 			 public static
 
-			
+			integer
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Purchase.html#74-85" title="Go to source code">create</a>( <span> <var>$params</var></span> )</code>
+		<code><a href="source-class-Purchase.html#177-202" title="Go to source code">create</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Creates a new row to the table <em>Purchase</em> based on the parameters and returns the id of the new row</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Creates a new row to the table <em>Purchase</em> based on the parameters and returns the id of the new row</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					integer<br>the id of the newly created row
+				</div>
 
 
 
@@ -518,16 +726,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_purchase_date">#</a>
-		<code><a href="source-class-Purchase.html#87-94" title="Go to source code">set_purchase_date</a>( <span> <var>$purchase_ids</var></span> )</code>
+		<code><a href="source-class-Purchase.html#204-216" title="Go to source code">set_purchase_date</a>( <span>array <var>$purchase_ids</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Sets current time as purchase_date to all the rows which ids are given as parameters</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Sets current time as purchase_date to all the rows which ids are given as parameters</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$purchase_ids</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
@@ -548,16 +761,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-Purchase.html#96-98" title="Go to source code">delete</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-Purchase.html#218-225" title="Go to source code">delete</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Deletes the row that corresponds to the id given as parameter</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Deletes the row that corresponds to the id given as parameter</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
