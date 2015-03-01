@@ -18,18 +18,8 @@ class ProductController extends BaseController {
         $product_departments = array();
         
         foreach ($products as $product) {
-            if ($product->unit != null) {
-                array_push($product_units, Unit::find($product->unit));
-            } else {
-                array_push($product_units, null);
-            }
-            
-            if ($product->department != null) {
-                array_push($product_departments, Department::find($product->department));
-            } else {
-                array_push($product_departments, null);
-            }
-                
+            array_push($product_units, Unit::find($product->unit));
+            array_push($product_departments, Department::find($product->department));
         }
         
         self::render_view('product/index.html', array('products' => $products, 
@@ -154,34 +144,23 @@ class ProductController extends BaseController {
     public static function store() {
         self::check_logged_in();
         $params = $_POST;
-        $units = Unit::all();
-        $departments = Department::all();
         
-        if ($params['unit'] == 'null') {
-            $params['unit'] = null;
-        }
+        $attributes = self::clean_attributes($params);
         
-        if ($params['department'] == 'null') {
-            $params['department'] = null;
-        }
-        
-        $attributes = array(
-            'name' => StringUtil::trim($params['name']),
-            'department' => $params['department'],
-            'unit' => $params['unit'],
-            'owner' => parent::get_user_logged_in()->id
-        );
-        
-        $product = new Product($attributes);
-        $errors = $product->errors();
+        $errors = self::validation_errors($attributes);
         
         if (count($errors) == 0) {
             $id = Product::create($attributes);
+            
             self::redirect_to('/product/' . $id, array('message' => 'Tuote lisätty!'));
         } else {
-            self::render_view('product/new.html', array('errors' => $errors, 'attributes' => $attributes, 'units' => $units, 'departments' => $departments));
+            $units = Unit::all();
+            $departments = Department::all();
+            
+            self::render_view('product/new.html', array('errors' => $errors, 
+                'attributes' => $attributes, 'units' => $units, 
+                'departments' => $departments));
         }
-        
     }
     
     /**
@@ -200,26 +179,25 @@ class ProductController extends BaseController {
     public static function update($id) {
         self::check_logged_in();
         $params = $_POST;
-        $units = Unit::all();
-        $departments = Department::all();
-        $name_original = Product::find($id)->name;
         
-        $attributes = array(
-            'name' => $params['name'],
-            'department' => $params['department'],
-            'unit' => $params['unit'],
-            'owner' => parent::get_user_logged_in()->id
-        );
+        $attributes = self::clean_attributes($params);
+        $attributes['id'] = $id;
         
-        $product = new Product($attributes);
-        $errors = $product->errors();
+        $errors = self::validation_errors($attributes);
         
         if (count($errors) == 0) {
             Product::update($id, $attributes);
-            self::redirect_to('/product/' . $id, array('message' => 'Tuotetta on muokattu onnistuneesti!'));
+            
+            self::redirect_to('/product/' . $id, 
+                    array('message' => 'Tuotetta on muokattu onnistuneesti!'));
         } else {
-            $attributes['id'] = $id;
-            self::render_view('product/edit.html', array('errors' => $errors, 'attributes' => $attributes, 'units' => $units, 'departments' => $departments, 'name_original' => $name_original));
+            $units = Unit::all();
+            $departments = Department::all();
+            $name_original = Product::find($id)->name;
+            
+            self::render_view('product/edit.html', array('errors' => $errors, 
+                'attributes' => $attributes, 'units' => $units, 
+                'departments' => $departments, 'name_original' => $name_original));
         }
     }
     
@@ -242,5 +220,42 @@ class ProductController extends BaseController {
         } else {
             return $product;
         }
+    }
+    
+    /**
+     * A helper method to clean the attributes before they are passed to the {@link Product::create($params)} or {@link Product::update($id, $params)} methods.
+     * 
+     * @param array $params "raw" params
+     * @return array "cleaned" attributes
+     */
+    public static function clean_attributes($params) {
+        if ($params['unit'] == 'null') {
+            $params['unit'] = null;
+        }
+        
+        if ($params['department'] == 'null') {
+            $params['department'] = null;
+        }
+        
+        $attributes = array(
+            'name' => StringUtil::trim($params['name']),
+            'department' => $params['department'],
+            'unit' => $params['unit'],
+            'owner' => parent::get_user_logged_in()->id
+        );
+        
+        return $attributes;
+    }
+    
+    /**
+     * A helper method that returns the possible validation errors that creating a new {@link Product} object would cause
+     * 
+     * @param array $attributes
+     * @return array an array of error messages
+     */
+    public static function validation_errors($attributes) {
+        $product = new Product($attributes);
+        
+        return $product->errors();
     }
 }

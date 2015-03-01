@@ -118,6 +118,14 @@
   
   
   // Purchases routes
+
+  $app->get('/purchases/:id/edit', function($id) {
+      PurchaseController::edit($id);
+  });
+  
+  $app->post('/purchases/:id/edit', function($id) {
+      PurchaseController::update($id);
+  });
   
   $app->post('/purchases', function() {
       PurchaseController::store();
@@ -148,6 +156,10 @@
   
   $app->post('/unit/:id/edit', function($id) {
       UnitController::update($id);
+  });
+  
+  $app->post('/units/:id/delete', function($id) {
+      UnitController::destroy($id);
   });
   
   $app->post('/units', function() {

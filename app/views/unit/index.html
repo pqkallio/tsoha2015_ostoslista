@@ -24,8 +24,8 @@
                 <td>{{unit.name_plural}}</td>
                 <td>{{unit.abbreviation}}</td>
                 <td>
-                    <form action="{{base_path}}/unit/{{unit.id}}/delete" onclick="return confirm('Yksikkö {{unit.name_singular}} poistetaan pysyvästi!')" method="post">
-                        <input type="submit" value="×" class="btn btn-danger">
+                    <form action="{{base_path}}/units/{{unit.id}}/delete" onclick="return confirm('Yksikkö {{unit.name_singular}} poistetaan pysyvästi!')" method="post">
+                        <input type="submit" value="×" class="btn btn-danger" style="border-radius: 100%">
                     </form>
                 </td>
             </tr>

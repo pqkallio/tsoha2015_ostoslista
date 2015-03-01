@@ -348,7 +348,7 @@
 
 				<b>Author:</b>
 				kallionpetri<br>
-			<b>Located at</b> <a href="source-class-Product.html#3-309" title="Go to source code">app/models/product.php</a>
+			<b>Located at</b> <a href="source-class-Product.html#3-314" title="Go to source code">app/models/product.php</a>
 		<br>
 	</div>
 
@@ -504,7 +504,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Product.html#93-104" title="Go to source code">__construct</a>( <span>array <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Product.html#106-117" title="Go to source code">__construct</a>( <span>array <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>A constructor inherited from <code><a href="class-BaseModel.html">BaseModel</a></code>. Validates the object based on validation rules.</p>
@@ -541,7 +541,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_all">#</a>
-		<code><a href="source-class-Product.html#106-120" title="Go to source code">all</a>( )</code>
+		<code><a href="source-class-Product.html#119-133" title="Go to source code">all</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieves all rows from the table <em>Product</em> and constructs Product objects from them finally returning them as an array.</p>
@@ -575,7 +575,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find">#</a>
-		<code><a href="source-class-Product.html#122-139" title="Go to source code">find</a>( <span>integer <var>$id</var></span> )</code>
+		<code><a href="source-class-Product.html#135-152" title="Go to source code">find</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Finds a row from the table <em>Product</em> with the id given as parameter, constructs a Product object of it and finally returns it.</p>
@@ -614,7 +614,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find_by_name">#</a>
-		<code><a href="source-class-Product.html#141-161" title="Go to source code">find_by_name</a>( <span>integer <var>$user_id</var></span>, <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-Product.html#154-174" title="Go to source code">find_by_name</a>( <span>integer <var>$user_id</var></span>, <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>Queries the database for a row corresponding to a user's id and the name of product, constructs an object and finally returns it.</p>
@@ -655,7 +655,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find_by_owner">#</a>
-		<code><a href="source-class-Product.html#163-179" title="Go to source code">find_by_owner</a>( <span>integer <var>$user_id</var></span> )</code>
+		<code><a href="source-class-Product.html#176-192" title="Go to source code">find_by_owner</a>( <span>integer <var>$user_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Queries the database for all rows from the table <em>Product</em> that have the user's id as owner, constructs objects out of them and returns them as an array.</p>
@@ -694,7 +694,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find_owners_favorites">#</a>
-		<code><a href="source-class-Product.html#181-198" title="Go to source code">find_owners_favorites</a>( <span>array <var>$params</var></span> )</code>
+		<code><a href="source-class-Product.html#194-211" title="Go to source code">find_owners_favorites</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
 			<p>Returns a user's favorite products.</p>
@@ -733,7 +733,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Product.html#200-224" title="Go to source code">create</a>( <span>array <var>$params</var></span> )</code>
+		<code><a href="source-class-Product.html#213-229" title="Go to source code">create</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
 			<p>Inserts a new row to the table <em>Product</em> based upon the params. Returns the id of the new row.</p>
@@ -772,7 +772,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Product.html#226-240" title="Go to source code">update</a>( <span>integer <var>$id</var></span>, <span>array <var>$params</var></span> )</code>
+		<code><a href="source-class-Product.html#231-245" title="Go to source code">update</a>( <span>integer <var>$id</var></span>, <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
 			<p>Updates the <em>Product</em> table's row corresponding to the id given as parameter with the values given in the $params array.</p>
@@ -809,7 +809,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-Product.html#242-249" title="Go to source code">delete</a>( <span>integer <var>$id</var></span> )</code>
+		<code><a href="source-class-Product.html#247-254" title="Go to source code">delete</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Deletes the row of the table <em>Product</em> corresponding to the id given as parameter.</p>
@@ -844,7 +844,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_fave">#</a>
-		<code><a href="source-class-Product.html#270-286" title="Go to source code">fave</a>( <span>type <var>$product_id</var></span>, <span>type <var>$user_id</var></span> )</code>
+		<code><a href="source-class-Product.html#275-291" title="Go to source code">fave</a>( <span>type <var>$product_id</var></span>, <span>type <var>$user_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Either inserts or deletes a row of the table <em>Favorite_product</em> based on whether a row with $product_id and $user_id already exists or not.</p>

@@ -49,7 +49,7 @@ class Unit extends BaseModel {
         }
         
         if (strlen($this->name_plural) < 2 || strlen($this->name_plural) > 28) {
-            $errors[] = 'Monikon pituuden tulee olla vähintään 2 ja enintaan 24 merkkiä.';
+            $errors[] = 'Monikon pituuden tulee olla vähintään 2 ja enintaan 28 merkkiä.';
         }
         
         $previous_units = self::all();
@@ -71,19 +71,19 @@ class Unit extends BaseModel {
     public function validate_abbreviation() {
         $errors = array();
         
-        if ($this->name_abbreviation == '' || $this->name_abbreviation == null) {
+        if ($this->abbreviation == '' || $this->abbreviation == null) {
             $errors[] = 'Lyhenne ei saa olla tyhjä.';
         }
         
-        if (strlen($this->name_abbreviation) < 2 || strlen($this->name_abbreviation) > 9) {
+        if (strlen($this->abbreviation) < 2 || strlen($this->abbreviation) > 9) {
             $errors[] = 'Lyhenteen pituuden tulee olla vähintään 2 ja enintaan 9 merkkiä.';
         }
         
         $previous_units = self::all();
 
         foreach ($previous_units as $u) {
-            if (strcasecmp($u->name_abbreviation, $this->name_abbreviation) == 0) {
-                $errors[] = 'Sama monikko löytyy jo tietokannasta.';
+            if (strcasecmp($u->abbreviation, $this->abbreviation) == 0) {
+                $errors[] = 'Sama lyhenne löytyy jo tietokannasta.';
             }
         }
         
@@ -96,6 +96,10 @@ class Unit extends BaseModel {
      * @param array $attributes attributes used to construct an object (default null)
      */
     public function __construct($attributes = null) {
+        $attributes['name_singular'] = StringUtil::trim($attributes['name_singular']);
+        $attributes['name_plural'] = StringUtil::trim($attributes['name_plural']);
+        $attributes['abbreviation'] = StringUtil::trim($attributes['abbreviation']);
+        
         parent::__construct($attributes);
         
         $this->validators = array('validate_name_singular', 'validate_name_plural',
@@ -180,6 +184,15 @@ class Unit extends BaseModel {
         }
         
         return $last_id;
+    }
+    
+    /**
+     * Deletes the row corresponding to the id given as parameter from the table <em>Unit</em>
+     * 
+     * @param integer $id
+     */
+    public static function delete($id) {
+        DB::query('DELETE FROM Unit WHERE id = :id', array('id' => $id));
     }
     
     /**

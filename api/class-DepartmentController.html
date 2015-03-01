@@ -315,7 +315,7 @@
 
 
 	<div class="description">
-	<p>Description of departments_controller</p>
+	<p>A controller class to handle requests relating to <code><a href="class-Department.html">Department</a></code> model.</p>
 	</div>
 
 	<dl class="tree">
@@ -347,8 +347,8 @@
 		
 
 				<b>Author:</b>
-				kallionpetri<br>
-			<b>Located at</b> <a href="source-class-DepartmentController.html#3-78" title="Go to source code">app/controllers/departments_controller.php</a>
+				Petri Kallio <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a><br>
+			<b>Located at</b> <a href="source-class-DepartmentController.html#3-143" title="Go to source code">app/controllers/departments_controller.php</a>
 		<br>
 	</div>
 
@@ -368,14 +368,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_index">#</a>
-		<code><a href="source-class-DepartmentController.html#10-15" title="Go to source code">index</a>( )</code>
+		<code><a href="source-class-DepartmentController.html#10-18" title="Go to source code">index</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Prepare variables needed to render the <em>all deparments</em> view and render it.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Prepare variables needed to render the <em>all deparments</em> view and render it.</p>
 
 
 
@@ -398,16 +398,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_show">#</a>
-		<code><a href="source-class-DepartmentController.html#17-22" title="Go to source code">show</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-DepartmentController.html#20-30" title="Go to source code">show</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Takes a <code><a href="class-Department.html">Department</a></code>'s id as a parameter, asks for the corresponding object from the model class and renders its <em>show</em> view.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Takes a <code><a href="class-Department.html">Department</a></code>'s id as a parameter, asks for the corresponding object from the model class and renders its <em>show</em> view.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>an id of a particular <code><a href="class-Department.html">Department</a></code> object</dd>
+				</dl></div>
 
 
 
@@ -428,14 +433,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-DepartmentController.html#24-26" title="Go to source code">create</a>( )</code>
+		<code><a href="source-class-DepartmentController.html#32-37" title="Go to source code">create</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Prepares the variables needed to render the <em>create new department</em> view and renders it.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Prepares the variables needed to render the <em>create new department</em> view and renders it.</p>
 
 
 
@@ -458,19 +463,32 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_store">#</a>
-		<code><a href="source-class-DepartmentController.html#28-47" title="Go to source code">store</a>( )</code>
+		<code><a href="source-class-DepartmentController.html#39-66" title="Go to source code">store</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Asks for the <code><a href="class-Department.html">Department</a></code> model class to insert a new row to the database based on the parameters given with HTTP Post request and either</p>
+
+<ol>
+ <li>redirects to the all <code><a href="class-Department.html">Department</a></code>'s view or</li>
+ <li>if the new object didn't pass the validations, renders the <em>create new department</em> view displaying the errors that prohibited the object from being saved</li>
+</ol>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Asks for the <code><a href="class-Department.html">Department</a></code> model class to insert a new row to the database based on the parameters given with HTTP Post request and either</p>
+
+<ol> <li>redirects to the all <code><a href="class-Department.html">Department</a></code>'s view or</li> <li>if the new object didn't pass the validations, renders the <em>create new department</em> view displaying the errors that prohibited the object from being saved</li>
+</ol>
 
 
 
 
 
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-Department.html#_validate_name">Department::validate_name()</a></code><br>
+						<code><a href="class-Department.html#_validate_abbreviation">Department::validate_abbreviation()</a></code><br>
+				</div>
 
 
 		</div>
@@ -488,16 +506,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_edit">#</a>
-		<code><a href="source-class-DepartmentController.html#49-54" title="Go to source code">edit</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-DepartmentController.html#68-78" title="Go to source code">edit</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Takes a <code><a href="class-Department.html">Department</a></code>'s id as a parameter, asks for the corresponding object from the model class and renders its <em>edit</em> view.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Takes a <code><a href="class-Department.html">Department</a></code>'s id as a parameter, asks for the corresponding object from the model class and renders its <em>edit</em> view.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>an id of a particular <code><a href="class-Department.html">Department</a></code> object</dd>
+				</dl></div>
 
 
 
@@ -518,19 +541,37 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-DepartmentController.html#56-69" title="Go to source code">update</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-DepartmentController.html#80-110" title="Go to source code">update</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Asks for the <code><a href="class-Department.html">Department</a></code> model class to update the row in the database with the corresponding id based on the parameters given with HTTP Post request and either</p>
+
+<ol>
+ <li>redirects to the all <code><a href="class-Department.html">Department</a></code>s' view or</li>
+ <li>if the new object didn't pass the validations, renders the <code><a href="class-Department.html">Department</a></code>'s <em>edit department</em> view displaying the errors that prohibited the update from being made</li>
+</ol>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Asks for the <code><a href="class-Department.html">Department</a></code> model class to update the row in the database with the corresponding id based on the parameters given with HTTP Post request and either</p>
+
+<ol> <li>redirects to the all <code><a href="class-Department.html">Department</a></code>s' view or</li> <li>if the new object didn't pass the validations, renders the <code><a href="class-Department.html">Department</a></code>'s <em>edit department</em> view displaying the errors that prohibited the update from being made</li>
+</ol>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
-
-
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-Department.html#_validate_name">Department::validate_name()</a></code><br>
+						<code><a href="class-Department.html#_validate_abbreviation">Department::validate_abbreviation()</a></code><br>
+				</div>
 
 
 		</div>
@@ -548,16 +589,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_destroy">#</a>
-		<code><a href="source-class-DepartmentController.html#71-77" title="Go to source code">destroy</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-DepartmentController.html#112-123" title="Go to source code">destroy</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Takes a <code><a href="class-Department.html">Department</a></code>'s id as a parameter, asks the model class to delete the corresponding row from the database and redirects to the user's <em>all departments</em> view.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Takes a <code><a href="class-Department.html">Department</a></code>'s id as a parameter, asks the model class to delete the corresponding row from the database and redirects to the user's <em>all departments</em> view.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>an id of a particular <code><a href="class-Department.html">Department</a></code> object</dd>
+				</dl></div>
 
 
 

@@ -1,7 +1,15 @@
 <?php
 
-  class BaseController{
+  /**
+   * A parent class to all the other controller classes
+   */
+  class BaseController {
 
+    /**
+     * Returns the logged in user or null if there aren't one
+     * 
+     * @return User currently logged in user
+     */
     public static function get_user_logged_in(){
       if (isset($_SESSION['user'])) {
           $user_id = $_SESSION['user'];
@@ -13,6 +21,9 @@
       return null;
     }
 
+    /**
+     * Checks if a user is logged in and redirects to login page if there aren't one
+     */
     public static function check_logged_in(){
       if (!isset($_SESSION['user'])) {
           self::redirect_to('/login', array('message' => 'Kirjaudu ensin sisään!'));

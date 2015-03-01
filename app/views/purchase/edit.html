@@ -1,33 +1,43 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% if name_original != null %}
-    <h2>Muokkaa tuotetta <em>{{name_original}}</em></h2><br/>
-{% else %}
-    <h2>Muokkaa tuotetta <em>{{attributes.name}}</em></h2><br/>
-{% endif %}
+<h2>Muokkaa ostosta</h2>
+<form action="{{base_path}}/purchases/{{attributes.id}}/delete" method="post">
+    <input style="display:inline-block;" type="submit" value="Poista" class="btn btn-danger">
+</form>
+<br/>
 
-<form action="{{base_path}}/product/{{attributes.id}}/edit" method="POST">
+<form action="{{base_path}}/purchases/{{attributes.id}}/edit" method="POST">
     <div class="form-group">
         <label for="name">Nimi</label>
         <input type="text" value="{{attributes.name}}" name="name">
     </div>
     <div class="form-group">
+        <label for="amount">Määrä</label>
+        <input type="number" value="{{attributes.amount}}" name="amount">
+    </div>
+    <div class="form-group">
         <label for="unit">Yksikkö</label>
-        <select name="unit">
+        <select name="unit" class="form-group">
             <option value="null"></option>
             {% for unit in units %}
                 {% if unit.id == attributes.unit %}
-                    <option value="{{unit.id}}" selected>{{unit.name_singular}}</option>
+                    <option value="{{unit.id}}" selected>
                 {% else %}
-                    <option value="{{unit.id}}">{{unit.name_singular}}</option>
+                    <option value="{{unit.id}}">
                 {% endif %}
+                {% if unit.abbreviation != null %}
+                    {{unit.abbreviation}}
+                {% else %}
+                    {{unit.name_singular}}
+                {% endif %}
+            </option>
             {% endfor %}
         </select>
     </div>
     <div class="form-group">
         <label for="department">Osasto</label>
-        <select name="department">
+        <select name="department" class="form-group">
             <option value="null"></option>
             {% for department in departments %}
                 {% if department.id == attributes.department %}
@@ -38,6 +48,7 @@
             {% endfor %}
         </select>
     </div>
+    <input name="list" type="hidden" value="{{attributes.list}}"/>
     <input type="submit" value="Tallenna muutokset!" class="btn btn-success">
 </form>
 

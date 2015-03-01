@@ -6,8 +6,7 @@
  * @author Petri Kallio <kallionpetri@gmail.com>
  */
 class Purchase extends BaseModel {
-    public $id, $shopping_list, $product, $department, $unit, $amount, $purchase_date;
-    
+    public $id, $shopping_list, $product, $department, $unit, $amount, $purchase_date;   
     
     /**
      * A function that validates the Purchase's shopping list.
@@ -41,12 +40,13 @@ class Purchase extends BaseModel {
             $product = Product::find($this->product);
             $shopping_list = null;
             
-            if (length(self::validate_shopping_list() == 0)) {
+            if (count(self::validate_shopping_list() == 0)) {
                 $shopping_list = ShoppingList::find($this->shopping_list);
             }
             
             if ($product == null || $shopping_list == null 
-                    || $product->owner != $shopping_list->owner) {
+                    || ($product->owner != $shopping_list->owner
+                    && !ShoppingList::has_right_to_list($product->owner, $this->shopping_list))) {
                 $errors[] = 'Tuotetta ei löydy tietokannasta.';
             }
             
@@ -181,11 +181,11 @@ class Purchase extends BaseModel {
      * @return integer the id of the newly created row
      */
     public static function create($params) {
-        if ($params['unit'] == "") {
+        if ($params['unit'] == "null") {
             $params['unit'] = null;
         }
         
-        if ($params['department'] == "") {
+        if ($params['department'] == "null") {
             $params['department'] = null;
         }
         
@@ -240,5 +240,24 @@ class Purchase extends BaseModel {
                 'amount' => $row['amount'],
                 'purchase_date' => $row['purchase_date']
             ));
+    }
+    
+    /**
+     * Updates a row in the <em>Purchase</em> table based on the params given
+     * 
+     * @param array $params
+     */
+    public static function update($params) {
+        DB::query('UPDATE Purchase '
+                . 'SET product = :product, '
+                . '    amount = :amount, '
+                . '    unit = :unit, '
+                . '    department = :department '
+                . 'WHERE id = :id',
+                array('product' => $params['product'],
+                      'amount' => $params['amount'],
+                      'unit' => $params['unit'],
+                      'department' => $params['department'],
+                      'id' => $params['id']));
     }
 }

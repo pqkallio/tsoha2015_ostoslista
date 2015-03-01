@@ -315,7 +315,7 @@
 
 
 	<div class="description">
-	<p>Description of purchases_controller</p>
+	<p>A controller class to handle requests relating to <code><a href="class-Purchase.html">Purchase</a></code> model.</p>
 	</div>
 
 	<dl class="tree">
@@ -347,8 +347,8 @@
 		
 
 				<b>Author:</b>
-				kallionpetri<br>
-			<b>Located at</b> <a href="source-class-PurchaseController.html#3-77" title="Go to source code">app/controllers/purchases_controller.php</a>
+				Petri Kallio <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a><br>
+			<b>Located at</b> <a href="source-class-PurchaseController.html#3-190" title="Go to source code">app/controllers/purchases_controller.php</a>
 		<br>
 	</div>
 
@@ -368,19 +368,35 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_store">#</a>
-		<code><a href="source-class-PurchaseController.html#10-36" title="Go to source code">store</a>( )</code>
+		<code><a href="source-class-PurchaseController.html#10-38" title="Go to source code">store</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Asks for the <code><a href="class-Purchase.html">Purchase</a></code> model class to insert a new row to the database based on the parameters given with HTTP Post request and either</p>
+
+<ol>
+ <li>redirects to the user's <em>active list view</em> or</li>
+ <li>if the new object didn't pass the validations, redirects to the user's <em>active list view</em> displaying the errors that prohibited the object from being saved</li>
+</ol>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Asks for the <code><a href="class-Purchase.html">Purchase</a></code> model class to insert a new row to the database based on the parameters given with HTTP Post request and either</p>
+
+<ol> <li>redirects to the user's <em>active list view</em> or</li> <li>if the new object didn't pass the validations, redirects to the user's <em>active list view</em> displaying the errors that prohibited the object from being saved</li>
+</ol>
 
 
 
 
 
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-Purchase.html#_validate_amount">Purchase::validate_amount()</a></code><br>
+						<code><a href="class-Purchase.html#_validate_department">Purchase::validate_department()</a></code><br>
+						<code><a href="class-Purchase.html#_validate_product">Purchase::validate_product()</a></code><br>
+						<code><a href="class-Purchase.html#_validate_shopping_list">Purchase::validate_shopping_list()</a></code><br>
+						<code><a href="class-Purchase.html#_validate_unit">Purchase::validate_unit()</a></code><br>
+				</div>
 
 
 		</div>
@@ -398,17 +414,186 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_purchase_date">#</a>
-		<code><a href="source-class-PurchaseController.html#38-43" title="Go to source code">set_purchase_date</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-PurchaseController.html#40-52" title="Go to source code">set_purchase_date</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Passes the given <code><a href="class-Purchase.html">Purchase</a></code> object's id to the model class to set the current timestamp as the purchases purchase date</p>
 		</div>
 
 		<div class="description detailed hidden">
+			<p>Passes the given <code><a href="class-Purchase.html">Purchase</a></code> object's id to the model class to set the current timestamp as the purchases purchase date</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="edit" id="_edit">
+
+		<td class="attributes"><code>
+			 public static
+
 			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_edit">#</a>
+		<code><a href="source-class-PurchaseController.html#80-105" title="Go to source code">edit</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Takes a <code><a href="class-Purchase.html">Purchase</a></code>'s id as a parameter, asks for the corresponding object from the model class and renders its <em>edit</em> view.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Takes a <code><a href="class-Purchase.html">Purchase</a></code>'s id as a parameter, asks for the corresponding object from the model class and renders its <em>edit</em> view.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>an id of a particular <code><a href="class-Purchase.html">Purchase</a></code> object</dd>
+				</dl></div>
 
 
 
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="update" id="_update">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update">#</a>
+		<code><a href="source-class-PurchaseController.html#107-145" title="Go to source code">update</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Asks for the <code><a href="class-Purchase.html">Purchase</a></code> model class to update the row in the database with the corresponding id based on the parameters given with HTTP Post request and either</p>
+
+<ol>
+ <li>redirects to the user's <em>active list view</em> or</li>
+ <li>if the new object didn't pass the validations, redirects to the user's <em>active list view</em> displaying the errors that prohibited the object from being saved</li>
+</ol>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Asks for the <code><a href="class-Purchase.html">Purchase</a></code> model class to update the row in the database with the corresponding id based on the parameters given with HTTP Post request and either</p>
+
+<ol> <li>redirects to the user's <em>active list view</em> or</li> <li>if the new object didn't pass the validations, redirects to the user's <em>active list view</em> displaying the errors that prohibited the object from being saved</li>
+</ol>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>an id of a particular <code><a href="class-Purchase.html">Purchase</a></code> object</dd>
+				</dl></div>
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-Purchase.html#_validate_amount">Purchase::validate_amount()</a></code><br>
+						<code><a href="class-Purchase.html#_validate_department">Purchase::validate_department()</a></code><br>
+						<code><a href="class-Purchase.html#_validate_product">Purchase::validate_product()</a></code><br>
+						<code><a href="class-Purchase.html#_validate_shopping_list">Purchase::validate_shopping_list()</a></code><br>
+						<code><a href="class-Purchase.html#_validate_unit">Purchase::validate_unit()</a></code><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="clean_attributes" id="_clean_attributes">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_clean_attributes">#</a>
+		<code><a href="source-class-PurchaseController.html#148-164" title="Go to source code">clean_attributes</a>( <span>array <var>$params</var></span> )</code>
+
+		<div class="description short">
+			<p>A helper method to clean the attributes before they are passed to the <a href="Purchase::create($params)">Purchase::create($params)</a> or <a href="Purchase::update($params)">Purchase::update($params)</a> methods.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A helper method to clean the attributes before they are passed to the <a href="Purchase::create($params)">Purchase::create($params)</a> or <a href="Purchase::update($params)">Purchase::update($params)</a> methods.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd>"raw" params</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>"cleaned" attributes
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validation_errors" id="_validation_errors">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validation_errors">#</a>
+		<code><a href="source-class-PurchaseController.html#166-176" title="Go to source code">validation_errors</a>( <span>array <var>$attributes</var></span> )</code>
+
+		<div class="description short">
+			<p>A helper method that returns the possible validation errors that creating a new <code><a href="class-Purchase.html">Purchase</a></code> object would cause</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A helper method that returns the possible validation errors that creating a new <code><a href="class-Purchase.html">Purchase</a></code> object would cause</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$attributes</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array of error messages
+				</div>
 
 
 
@@ -428,16 +613,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_destroy">#</a>
-		<code><a href="source-class-PurchaseController.html#72-76" title="Go to source code">destroy</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-PurchaseController.html#178-189" title="Go to source code">destroy</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Takes a <code><a href="class-Purchase.html">Purchase</a></code>'s id as a parameter, asks the model class to delete the corresponding row from the database and redirects to the user's <em>active list</em> view.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Takes a <code><a href="class-Purchase.html">Purchase</a></code>'s id as a parameter, asks the model class to delete the corresponding row from the database and redirects to the user's <em>active list</em> view.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>an id of a particular <code><a href="class-Purchase.html">Purchase</a></code> object</dd>
+				</dl></div>
 
 
 

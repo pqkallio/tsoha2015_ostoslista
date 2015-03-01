@@ -348,7 +348,7 @@
 
 				<b>Author:</b>
 				Petri Kallio <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a><br>
-			<b>Located at</b> <a href="source-class-ShoppingList.html#3-231" title="Go to source code">app/models/shopping_list.php</a>
+			<b>Located at</b> <a href="source-class-ShoppingList.html#3-233" title="Go to source code">app/models/shopping_list.php</a>
 		<br>
 	</div>
 
@@ -436,7 +436,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-ShoppingList.html#61-70" title="Go to source code">__construct</a>( <span>array <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-ShoppingList.html#61-72" title="Go to source code">__construct</a>( <span>array <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>A constructor inherited from <code><a href="class-BaseModel.html">BaseModel</a></code>. Validates the object based on validation rules.</p>
@@ -473,7 +473,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_all">#</a>
-		<code><a href="source-class-ShoppingList.html#72-86" title="Go to source code">all</a>( )</code>
+		<code><a href="source-class-ShoppingList.html#74-88" title="Go to source code">all</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieves all rows from the table <em>List</em> and constructs ShoppingList objects from them finally returning them as an array.</p>
@@ -507,7 +507,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find">#</a>
-		<code><a href="source-class-ShoppingList.html#88-111" title="Go to source code">find</a>( <span>integer <var>$id</var></span> )</code>
+		<code><a href="source-class-ShoppingList.html#90-113" title="Go to source code">find</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Finds a row from the table <em>List</em> with the id given as parameter, constructs a ShoppingList object of it and finally returns it.</p>
@@ -546,7 +546,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find_by_owner">#</a>
-		<code><a href="source-class-ShoppingList.html#113-128" title="Go to source code">find_by_owner</a>( <span>integer <var>$user_id</var></span> )</code>
+		<code><a href="source-class-ShoppingList.html#115-130" title="Go to source code">find_by_owner</a>( <span>integer <var>$user_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Queries the database for all rows from the table <em>List</em> that have the user's id as owner, constructs objects out of them and returns them as an array.</p>
@@ -585,7 +585,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find_by_user">#</a>
-		<code><a href="source-class-ShoppingList.html#130-140" title="Go to source code">find_by_user</a>( <span>integer <var>$user_id</var></span> )</code>
+		<code><a href="source-class-ShoppingList.html#132-142" title="Go to source code">find_by_user</a>( <span>integer <var>$user_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Queries the database for all rows from the table <em>List</em> that the user owns or has right to, constructs objects out of them and returns them as an array.</p>
@@ -624,7 +624,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find_by_right_to_list">#</a>
-		<code><a href="source-class-ShoppingList.html#142-158" title="Go to source code">find_by_right_to_list</a>( <span>integer <var>$user_id</var></span> )</code>
+		<code><a href="source-class-ShoppingList.html#144-160" title="Go to source code">find_by_right_to_list</a>( <span>integer <var>$user_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Queries the database for all rows from the table <em>List</em> that the user has a right to, constructs objects out of them and returns them as an array.</p>
@@ -663,7 +663,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-ShoppingList.html#160-175" title="Go to source code">create</a>( <span>array <var>$params</var></span> )</code>
+		<code><a href="source-class-ShoppingList.html#162-177" title="Go to source code">create</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
 			<p>Inserts a new row to the table <em>List</em> based upon the params. Returns the id of the new row.</p>
@@ -702,7 +702,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-ShoppingList.html#177-184" title="Go to source code">delete</a>( <span>integer <var>$id</var></span> )</code>
+		<code><a href="source-class-ShoppingList.html#179-186" title="Go to source code">delete</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Deletes the row of the table <em>List</em> corresponding to the id given as parameter.</p>
@@ -737,7 +737,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_share_list">#</a>
-		<code><a href="source-class-ShoppingList.html#186-198" title="Go to source code">share_list</a>( <span>integer <var>$list_id</var></span>, <span>integer <var>$user_id</var></span> )</code>
+		<code><a href="source-class-ShoppingList.html#188-200" title="Go to source code">share_list</a>( <span>integer <var>$list_id</var></span>, <span>integer <var>$user_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Inserts a row to the <em>Right_to_list</em> table with the list's and the user's ids.</p>
@@ -774,7 +774,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_has_right_to_list">#</a>
-		<code><a href="source-class-ShoppingList.html#200-216" title="Go to source code">has_right_to_list</a>( <span>integer <var>$user_id</var></span>, <span>integer <var>$list_id</var></span> )</code>
+		<code><a href="source-class-ShoppingList.html#202-218" title="Go to source code">has_right_to_list</a>( <span>integer <var>$user_id</var></span>, <span>integer <var>$list_id</var></span> )</code>
 
 		<div class="description short">
 			<p>Checks if the user given as $user_id has right to the list given as $list_id</p>

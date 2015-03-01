@@ -64,6 +64,8 @@ class ShoppingList extends BaseModel {
      * @param array $attributes attributes used to construct an object (default null)
      */
     public function __construct($attributes = null) {
+        $attributes['name'] = StringUtil::trim_name($attributes['name']);
+        
         parent::__construct($attributes);
         
         $this->validators = array('validate_name', 'validate_owner');
@@ -167,7 +169,7 @@ class ShoppingList extends BaseModel {
         $rows = DB::query('INSERT INTO List (name, owner) '
                         . 'VALUES (:name, :owner) RETURNING id', 
                         array('name' => $params['name'], 
-                            'owner' => $params['user']));
+                            'owner' => $params['owner']));
 
         $row = $rows[0];
         $last_id = $row[0];

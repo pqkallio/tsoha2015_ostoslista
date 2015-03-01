@@ -24,10 +24,9 @@ class Department extends BaseModel {
             $errors[] = 'Nimen pituuden tulee olla vähintään 2 ja enintaan 50 merkkiä.';
         }
         
-        
-        $previous_departments = self::all();
+        $other_departments = $this->other_departments();
 
-        foreach ($previous_departments as $d) {
+        foreach ($other_departments as $d) {
             if (strcasecmp($d->name, $this->name) == 0) {
                 $errors[] = 'Olet jo lisännyt samannimisen osaston.';
             }
@@ -44,13 +43,35 @@ class Department extends BaseModel {
     public function validate_abbreviation() {
         $errors = array();
         
-        if (strlen($this->abbreviation) > 12) {
-            $errors[] = 'Lyhenteen pituuden tulee olla enintaan 12 merkkiä.';
+        if (!is_null($this->abbreviation) && $this->abbreviation != '') {
+            if (strlen($this->abbreviation) > 12) {
+                $errors[] = 'Lyhenteen pituuden tulee olla enintään 12 merkkiä.';
+            }
+            
+            $other_departments = $this->other_departments();
+
+            foreach ($other_departments as $d) {
+                if (strcasecmp($d->abbreviation, $this->abbreviation) == 0) {
+                    $errors[] = 'Olet jo lisännyt samannimisen lyhenteen.';
+                }
+            }
         }
                 
         return $errors;
     }
     
+    private function other_departments() {
+        $other_departments = array();
+        $rows = DB::query('SELECT * FROM Department WHERE id != :id', 
+                                        array('id' => $this->id));
+        
+        foreach ($rows as $row) {
+            $other_departments[] = self::create_department($row);
+        }
+        
+        return $other_departments;
+    }
+
     /**
      * Constructor method inherited from {@link BaseModel}. Validates the object based on validation rules.
      * 

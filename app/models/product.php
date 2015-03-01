@@ -25,9 +25,9 @@ class Product extends BaseModel {
         }
         
         if (BaseController::get_user_logged_in()) {
-            $previous_products = self::find_by_owner(BaseController::get_user_logged_in()->id);
+            $users_other_products = $this->users_other_products(BaseController::get_user_logged_in()->id);
 
-            foreach ($previous_products as $p) {
+            foreach ($users_other_products as $p) {
                 if (strcasecmp($p->name, $this->name) == 0) {
                     $errors[] = 'Olet jo lisännyt samannimisen tuotteen.';
                 }
@@ -88,6 +88,19 @@ class Product extends BaseModel {
         }
         
         return $errors;
+    }
+    
+    private function users_other_products($user_id) {
+        $users_other_products = array();
+        $rows = DB::query('SELECT * FROM Product WHERE id != :id AND owner = :owner', 
+                                        array('id' => $this->id, 
+                                            'owner' => $user_id));
+        
+        foreach ($rows as $row) {
+            $users_other_products[] = self::create_product($row);
+        }
+        
+        return $users_other_products;
     }
     
     /**
@@ -204,14 +217,6 @@ class Product extends BaseModel {
      * @return integer the new products id
      */
     public static function create($params) {
-        if ($params['unit'] == "") {
-            $params['unit'] = null;
-        }
-        
-        if ($params['department'] == "") {
-            $params['department'] = null;
-        }
-        
         $rows = DB::query('INSERT INTO Product (name, department, unit, owner) '
                 . 'VALUES (:name, :department, :unit, :owner) RETURNING id',
                 array('name' => strtolower(trim($params['name'])), 

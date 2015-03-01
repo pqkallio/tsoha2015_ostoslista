@@ -315,7 +315,7 @@
 
 
 	<div class="description">
-	<p>Description of shopping_lists_controller</p>
+	<p>A controller class to handle requests relating to <code><a href="class-ShoppingList.html">ShoppingList</a></code> model.</p>
 	</div>
 
 	<dl class="tree">
@@ -347,8 +347,8 @@
 		
 
 				<b>Author:</b>
-				kallionpetri<br>
-			<b>Located at</b> <a href="source-class-ShoppingListController.html#3-141" title="Go to source code">app/controllers/shopping_lists_controller.php</a>
+				Petri Kallio <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">k&#97;&#108;&#108;&#x69;&#x6f;&#x6e;&#x70;e&#116;&#114;&#105;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a><br>
+			<b>Located at</b> <a href="source-class-ShoppingListController.html#3-182" title="Go to source code">app/controllers/shopping_lists_controller.php</a>
 		<br>
 	</div>
 
@@ -368,14 +368,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_index">#</a>
-		<code><a href="source-class-ShoppingListController.html#10-31" title="Go to source code">index</a>( )</code>
+		<code><a href="source-class-ShoppingListController.html#10-34" title="Go to source code">index</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Prepare variables needed to render the user's <em>shopping lists'</em> view and render it.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Prepare variables needed to render the user's <em>shopping lists'</em> view and render it.</p>
 
 
 
@@ -398,16 +398,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_show">#</a>
-		<code><a href="source-class-ShoppingListController.html#33-79" title="Go to source code">show</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-ShoppingListController.html#36-92" title="Go to source code">show</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Takes a <code><a href="class-ShoppingList.html">ShoppingList</a></code>'s id as a parameter, asks for the corresponding object from the model class and renders its <em>show</em> view.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Takes a <code><a href="class-ShoppingList.html">ShoppingList</a></code>'s id as a parameter, asks for the corresponding object from the model class and renders its <em>show</em> view.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>an id of a particular <code><a href="class-ShoppingList.html">ShoppingList</a></code> object</dd>
+				</dl></div>
 
 
 
@@ -428,16 +433,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_active">#</a>
-		<code><a href="source-class-ShoppingListController.html#81-87" title="Go to source code">set_active</a>( <span> <var>$list_id</var></span> )</code>
+		<code><a href="source-class-ShoppingListController.html#94-105" title="Go to source code">set_active</a>( <span>integer <var>$list_id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Takes a list's id as parameter and passes it to the <code><a href="class-ShoppingList.html">ShoppingList</a></code> model class to set it as the user's active list.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Takes a list's id as parameter and passes it to the <code><a href="class-ShoppingList.html">ShoppingList</a></code> model class to set it as the user's active list.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$list_id</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
@@ -458,14 +468,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-ShoppingListController.html#93-103" title="Go to source code">create</a>( )</code>
+		<code><a href="source-class-ShoppingListController.html#111-129" title="Go to source code">create</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Passes the params passed with a HTTP post request and passes them to the <code><a href="class-ShoppingList.html">ShoppingList</a></code> class to create a new ShoppingList.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Passes the params passed with a HTTP post request and passes them to the <code><a href="class-ShoppingList.html">ShoppingList</a></code> class to create a new ShoppingList.</p>
 
 
 
@@ -488,16 +498,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_destroy">#</a>
-		<code><a href="source-class-ShoppingListController.html#105-117" title="Go to source code">destroy</a>( <span> <var>$id</var></span> )</code>
+		<code><a href="source-class-ShoppingListController.html#131-148" title="Go to source code">destroy</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Takes a <code><a href="class-ShoppingList.html">ShoppingList</a></code>'s id as a parameter, asks the model class to delete the corresponding row from the database and redirects to the user's <em>all lists</em> view.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Takes a <code><a href="class-ShoppingList.html">ShoppingList</a></code>'s id as a parameter, asks the model class to delete the corresponding row from the database and redirects to the user's <em>all lists</em> view.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>an id of a particular <code><a href="class-ShoppingList.html">ShoppingList</a></code> object</dd>
+				</dl></div>
 
 
 
@@ -518,16 +533,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_share">#</a>
-		<code><a href="source-class-ShoppingListController.html#119-132" title="Go to source code">share</a>( <span> <var>$list_id</var></span> )</code>
+		<code><a href="source-class-ShoppingListController.html#150-168" title="Go to source code">share</a>( <span>type <var>$list_id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Prepares the variables needed for rendering the <em>share shopping list</em> view and renders it.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Prepares the variables needed for rendering the <em>share shopping list</em> view and renders it.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$list_id</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
@@ -548,16 +568,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_share_list">#</a>
-		<code><a href="source-class-ShoppingListController.html#134-140" title="Go to source code">share_list</a>( <span> <var>$list_id</var></span> )</code>
+		<code><a href="source-class-ShoppingListController.html#170-181" title="Go to source code">share_list</a>( <span>integer <var>$list_id</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Passes the params passed with a HTTP post request and passes them to the <code><a href="class-ShoppingList.html">ShoppingList</a></code> class to share a ShoppingList with a particular <code><a href="class-User.html">User</a></code>.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Passes the params passed with a HTTP post request and passes them to the <code><a href="class-ShoppingList.html">ShoppingList</a></code> class to share a ShoppingList with a particular <code><a href="class-User.html">User</a></code>.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$list_id</var></dt>
+					<dd>the ShoppingList's id that is to be shared</dd>
+				</dl></div>
 
 
 

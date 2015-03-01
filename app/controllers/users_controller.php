@@ -1,18 +1,26 @@
 <?php
 
 /**
- * Description of users_controller
- *
- * @author kallionpetri
+ * A controller class to handle requests relating to {@link User} model.
+ * 
+ * @author Petri Kallio <kallionpetri@gmail.com>
  */
 class UserController extends BaseController {
     
+    /**
+     * Prepare variables needed to render the <em>all users</em> view and render it.
+     */
     public static function index() {
         $users = User::all();
         
         self::render_view('user/index.html', array('users' => $users));
     }
     
+    /**
+     * Takes a {@link User}'s id as a parameter, asks for the corresponding object from the model class and renders its <em>show</em> view.
+     * 
+     * @param integer $id an id of a particular {@link User} object
+     */
     public static function show($id) {
         $user = User::find($id);
         
@@ -23,10 +31,16 @@ class UserController extends BaseController {
         }
     }
 
+    /**
+     * Renders the <em>login</em> view
+     */
     public static function login() {
         self::render_view('user/login.html');
     }
     
+    /**
+     * Handles a login post request and either starts a new session and redirects the user to his/her <em>active list</em> view or if the login was unsuccessful, back to the login page
+     */
     public static function handle_login() {
         $params = $_POST;
         
@@ -43,16 +57,35 @@ class UserController extends BaseController {
         }
     }
     
+    /**
+     * Resets the session logging the current user out and redirecting the user back to the login page
+     */
     public static function logout() {
         $_SESSION['user'] = null;
         
         self::redirect_to('/login');
     }
     
+    /**
+     * Renders the <em>sign up</em> view
+     */
     public static function signup() {
         self::render_view('user/signup.html');
     }
     
+    /**
+     * Asks for the {@link User} model class to insert a new row to the database based on the parameters given with HTTP Post request and either
+     * <ol>
+     *  <li>redirects to the login page if successful or</li>
+     *  <li>if the new object didn't pass the validations, renders the <em>sign up</em> view displaying the errors that prohibited the object from being saved</li>
+     * </ol>
+     * 
+     * @see User::validate_email()
+     * @see User::validate_first_name()
+     * @see User::validate_key()
+     * @see User::validate_last_name()
+     * @see User::validate_user_name()
+     */
     public static function store() {
         $params = $_POST;
         
